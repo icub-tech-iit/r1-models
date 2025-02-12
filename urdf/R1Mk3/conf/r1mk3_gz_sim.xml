@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="r1mk3Sim" build="1" portprefix="/r1mk3Sim" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <devices>
+
+    <!-- MOTOR CONTROLLERS -->
+    <xi:include href="wrappers/motorControl/left_arm-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/right_arm-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/head-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/torso-mc_wrapper.xml" />
+
+    <xi:include href="wrappers/motorControl/left_arm-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/right_arm-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/head-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/torso-mc_remapper.xml" />
+
+
+    </devices>
+</robot>
