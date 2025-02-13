@@ -1010,7 +1010,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_torso.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
     - |
@@ -1022,7 +1022,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_head.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
  # left arm
@@ -1036,7 +1036,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_arm.ini</yarpConfigurationFile>
               <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
             </plugin>
             </gazebo>
@@ -1049,7 +1049,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
     - |
@@ -1091,7 +1091,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_arm.ini</yarpConfigurationFile>
               <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
             </plugin>
             </gazebo>
@@ -1104,7 +1104,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
     - |
@@ -1136,6 +1136,18 @@ XMLBlobs:
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
     - |
+        <gazebo>
+          <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+          </plugin>
+        </gazebo>
+    - |
+        <gazebo>
+          <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+            <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_mobile_base.ini</yarpConfigurationFile>
+          </plugin>
+        </gazebo>
+    - |
             <gazebo>
               <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
                 <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
@@ -1147,19 +1159,6 @@ XMLBlobs:
                 <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
               </plugin>
             </gazebo>
-
-    - |
-        <gazebo>
-          <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
-            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
-          </plugin>
-        </gazebo>
-    - |
-        <gazebo>
-          <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
-          </plugin>
-        </gazebo>
 
     - |
       <gazebo reference="mobile_base_body_link">

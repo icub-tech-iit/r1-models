@@ -60,15 +60,17 @@ foreach(ROBOT_DIRNAME ${ROBOTS_NAMES})
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/model.config.in
                    ${ROBOT_FIXED_MODEL_CONFIG_FILE}
                    @ONLY)
-
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/fixed_model.sdf.in
+                   ${ROBOT_FIXED_MODEL_SDF_FILE}
+                   @ONLY)
   endif()
 endforeach()
 
 # install the directory
 install(DIRECTORY ${CMAKE_BINARY_DIR}/${BUILD_PREFIX} DESTINATION share)
 
-# Install empty ergoCub file in <prefix>/share/ament_index/resource_index/packages
-# so that ergoCub package is found by ROS2
+# Install empty R1Mk3 file in <prefix>/share/ament_index/resource_index/packages
+# so that R1Mk3 package is found by ROS2
 # See https://github.com/robotology/icub-models/issues/177
 # and https://github.com/icub-tech-iit/ergocub-software/issues/59
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/R1Mk3_empty_file "")
