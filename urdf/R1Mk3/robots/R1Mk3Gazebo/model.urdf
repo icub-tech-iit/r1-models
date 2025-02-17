@@ -1609,6 +1609,18 @@
       </material>
     </collision>
   </link>
+  <link name="l_arm_ft"/>
+  <joint name="l_arm_ft_fixed_joint" type="fixed">
+    <origin xyz="-0.0043499999999990074 0.015000000000000069 -0.08430000000000004" rpy="3.14159265358978 -8.827137882952753e-17 -1.5707963267948901"/>
+    <parent link="l_shoulder_2"/>
+    <child link="l_arm_ft"/>
+  </joint>
+  <link name="r_arm_ft"/>
+  <joint name="r_arm_ft_fixed_joint" type="fixed">
+    <origin xyz="-0.0068499999999994746 -0.015000000000000041 -0.08429999999999993" rpy="-3.1415926535897865 1.4451318944920141e-16 1.5707963267948946"/>
+    <parent link="r_shoulder_2"/>
+    <child link="r_arm_ft"/>
+  </joint>
   <link name="torso"/>
   <joint name="torso_fixed_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -2390,16 +2402,24 @@
     <child link="torso_tripod_root"/>
   </joint>
   <gazebo>
-    <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">  <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile></plugin>
+    <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">  <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_torso.ini</yarpConfigurationFile></plugin>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_torso.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">  <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_head.ini</yarpConfigurationFile></plugin>
+    <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">  <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_head.ini</yarpConfigurationFile></plugin>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_head.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
   <gazebo>
     <plugin name="controlboard_left_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
@@ -2408,7 +2428,10 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">  <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_arm.ini</yarpConfigurationFile>  <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration></plugin>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_arm.ini</yarpConfigurationFile>
+      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+    </plugin>
   </gazebo>
   <gazebo>
     <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
@@ -2416,15 +2439,36 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">  <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_hand_mk5_1.ini</yarpConfigurationFile></plugin>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
-  <gazebo reference="l_shoulder_pitch">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_shoulder_roll">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_shoulder_yaw">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_elbow">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_roll">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_pitch">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_yaw">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
+  <gazebo reference="l_shoulder_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_elbow">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
   <gazebo>
     <plugin name="controlboard_right_arm" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
@@ -2432,7 +2476,10 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">  <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_arm.ini</yarpConfigurationFile>  <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration></plugin>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_arm.ini</yarpConfigurationFile>
+      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+    </plugin>
   </gazebo>
   <gazebo>
     <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
@@ -2440,54 +2487,249 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">  <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_hand_mk5_1.ini</yarpConfigurationFile></plugin>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
-  <gazebo reference="r_shoulder_pitch">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_shoulder_roll">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_shoulder_yaw">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_elbow">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_roll">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_pitch">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_yaw">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo>  <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>  </plugin></gazebo>
-  <gazebo>  <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">    <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_mobile_base.ini</yarpConfigurationFile>  </plugin></gazebo>
-  <gazebo>  <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">    <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>  </plugin></gazebo>
-  <gazebo>  <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">    <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>  </plugin></gazebo>
-  <gazebo reference="mobile_base_body_link">    <collision>      <surface>        <contact>          <ode/>        </contact>        <friction>          <ode>            <mu>0.0</mu>            <mu2>0.0</mu2>          </ode>        </friction>      </surface>    </collision></gazebo>
-  <gazebo>  <pose>0 0 0.16 0 0 0</pose></gazebo>
-  <gazebo reference="mobile_base_l_wheel_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="mobile_base_r_wheel_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="torso_heave_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="torso_roll_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="torso_pitch_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="torso_yaw_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="neck_pitch_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="neck_yaw_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_shoulder_pitch_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_shoulder_roll_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_shoulder_yaw_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_elbow_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_pronosupination_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_heave_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_roll_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_wrist_pitch_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_hand_paddle_proximal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_hand_paddle_distal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_hand_thumb_proximal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="l_hand_thumb_distal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_shoulder_pitch_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_shoulder_roll_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_shoulder_yaw_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_elbow_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_pronosupination_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_heave_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_roll_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_wrist_pitch_eq_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_hand_paddle_proximal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_hand_paddle_distal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_hand_thumb_proximal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
-  <gazebo reference="r_hand_thumb_distal_joint">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
+  <gazebo reference="r_shoulder_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_elbow">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_roll">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_pitch">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_yaw">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_mobile_base.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo reference="mobile_base_body_link">
+    <collision>
+      <surface>
+        <contact>
+          <ode/>
+        </contact>
+        <friction>
+          <ode>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+  <gazebo>
+    <pose>0 0 0.16 0 0 0</pose>
+  </gazebo>
+  <gazebo reference="mobile_base_l_wheel_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="mobile_base_r_wheel_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_heave_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_roll_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_pitch_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="torso_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="neck_pitch_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="neck_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_pitch_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_roll_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_shoulder_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_elbow_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_pronosupination_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_heave_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_roll_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_wrist_pitch_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_paddle_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_paddle_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_thumb_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="l_hand_thumb_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_pitch_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_roll_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_shoulder_yaw_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_elbow_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_pronosupination_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_heave_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_roll_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_wrist_pitch_eq_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_paddle_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_paddle_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_thumb_proximal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo reference="r_hand_thumb_distal_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
   <gazebo>
     <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
   </gazebo>
+  <gazebo reference="l_arm_ft_sensor">
+    <sensor name="l_arm_ft" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>-2.15106e-16 0 0 3.14159 -2.54805e-16 -1.5708 </pose>
+      <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="l_arm_ft" type="force_torque">
+    <parent joint="l_arm_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="3.14159 -2.54805e-16 -1.5708 " xyz="-2.15106e-16 0 0"/>
+  </sensor>
+  <gazebo reference="r_arm_ft_sensor">
+    <sensor name="r_arm_ft" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>0 0 0 -3.14159 -2.20185e-17 1.5708 </pose>
+      <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="r_arm_ft" type="force_torque">
+    <parent joint="r_arm_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="-3.14159 -2.20185e-17 1.5708 " xyz="0 0 0"/>
+  </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser" type="ray">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>0.07 0 0.031 0 -0 0 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>5.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+      <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser" type="ray">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
+  </sensor>
 </robot>

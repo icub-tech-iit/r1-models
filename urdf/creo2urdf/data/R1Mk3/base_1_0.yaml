@@ -627,65 +627,65 @@ linkFrames:
     frameName: SCSYS_R_HAND_PINKIE_2
 
 # Sensors options
-# forceTorqueSensors:
-#     - jointName: l_arm_ft_sensor
-#       directionChildToParent: Yes
-#       exportFrameInURDF: Yes
-#       frame: sensor
-#       frameName: SCSYS_L_SHOULDER_2_FT
-#       linkName: l_shoulder_2
-#       sensorName: l_arm_ft
-#       sensorBlobs:
-#       - |
-#           <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-#             <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
-#           </plugin>
-#     - jointName: r_arm_ft_sensor
-#       directionChildToParent: Yes
-#       exportFrameInURDF: Yes
-#       frame: sensor
-#       frameName: SCSYS_R_SHOULDER_2_FT
-#       linkName: r_shoulder_2
-#       sensorName: r_arm_ft
-#       sensorBlobs:
-#       - |
-#           <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-#             <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
-#           </plugin>
+forceTorqueSensors:
+    - jointName: l_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_L_SHOULDER_2_FT
+      linkName: l_shoulder_2
+      sensorName: l_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: r_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_R_SHOULDER_2_FT
+      linkName: r_shoulder_2
+      sensorName: r_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
 
-# sensors:
-#   - linkName: mobile_base_body_link
-#     frameName: SCSYS_MOBILE_BASE_LIDAR
-#     sensorName: "base_laser"
-#     exportFrameInURDF: No
-#     sensorType: "ray"
-#     updateRate: 40
-#     sensorBlobs:
-#     - |
-#                 <ray>
-#                  <scan>
-#                   <horizontal>
-#                    <samples>360</samples>
-#                    <resolution>1</resolution>
-#                    <min_angle>-3.14</min_angle>
-#                    <max_angle>3.14</max_angle>
-#                   </horizontal>
-#                  </scan>
-#                  <range>
-#                   <min>0.10</min>
-#                   <max>5.0</max>
-#                   <resolution>0.01</resolution>
-#                  </range>
-#                  <noise>
-#                   <type>gaussian</type>
-#                   <mean>0.0</mean>
-#                   <stddev>0.005</stddev>
-#                  </noise>
-#                 </ray>
-#     - |
-#                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-#                     <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
-#                 </plugin>
+sensors:
+  - linkName: mobile_base_body_link
+    frameName: SCSYS_MOBILE_BASE_LIDAR
+    sensorName: "base_laser"
+    exportFrameInURDF: No
+    sensorType: "ray"
+    updateRate: 40
+    sensorBlobs:
+    - |
+                <ray>
+                 <scan>
+                  <horizontal>
+                   <samples>360</samples>
+                   <resolution>1</resolution>
+                   <min_angle>-3.14</min_angle>
+                   <max_angle>3.14</max_angle>
+                  </horizontal>
+                 </scan>
+                 <range>
+                  <min>0.10</min>
+                  <max>5.0</max>
+                  <resolution>0.01</resolution>
+                 </range>
+                 <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.005</stddev>
+                 </noise>
+                </ray>
+    - |
+                <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
+                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+                </plugin>
 #   # TODO But multicamera actually exists??
 #   # - linkName: head_link
 #   #   frameName: SCSYS_HEAD_LEOPARD_CYCLOPIC
@@ -1080,6 +1080,12 @@ XMLBlobs:
             <gazebo reference="l_wrist_yaw">
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
     # right arm
     - |
             <gazebo>
@@ -1134,6 +1140,12 @@ XMLBlobs:
     - |
             <gazebo reference="r_wrist_yaw">
               <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+            </plugin>
             </gazebo>
     - |
         <gazebo>

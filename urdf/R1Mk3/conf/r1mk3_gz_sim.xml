@@ -18,6 +18,9 @@
     <xi:include href="wrappers/motorControl/torso-mc_remapper.xml" />
     <xi:include href="wrappers/motorControl/base-mc_remapper.xml" />
 
+    <!-- FT SENSORS -->
+    <xi:include href="wrappers/FT/left_arm-FT_wrapper.xml" />
+    <xi:include href="wrappers/FT/right_arm-FT_wrapper.xml" />
 
     </devices>
 </robot>
