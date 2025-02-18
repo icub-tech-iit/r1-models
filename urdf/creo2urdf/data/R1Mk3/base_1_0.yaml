@@ -724,72 +724,72 @@ sensors:
 #   #               <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
 #   #                   <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_multicamera/gazebo_cer_multicamera.ini</yarpConfigurationFile>
 #   #               </plugin>
-#   - linkName: head_link
-#     frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
-#     sensorName: "asus_xtion_depth"
-#     exportFrameInURDF: No
-#     sensorType: "depth"
-#     updateRate: 30
-#     sensorBlobs:
-#     - |
-#                 <camera name='asus_xtion_depth_camera'>
-#                     <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
-#                     <horizontal_fov>1.02259</horizontal_fov>
-#                     <distortion>
-#                         <k1>0</k1>
-#                         <k2>0</k2>
-#                         <k3>0</k3>
-#                         <p1>0</p1>
-#                         <p2>0</p2>
-#                         <center>319.5 239.5</center>
-#                     </distortion>
-#                     <image>
-#                         <width>640</width>
-#                         <height>480</height>
-#                         <format>R8G8B8</format>
-#                     </image>
-#                     <clip>
-#                         <near>0.02</near>
-#                         <far>3000</far>
-#                     </clip>
-#                 </camera>
-#     - |
-#                 <plugin filename="libgazebo_yarp_depthCamera.so"  name="depth_camera_plugin">
-#                     <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
-#                 </plugin>
-#   - linkName: head_link
-#     frameName: SCSYS_HEAD_ASUS_XTION_RGB
-#     sensorName: "asus_xtion_rgb"
-#     exportFrameInURDF: No
-#     sensorType: "camera"
-#     updateRate: 30
-#     sensorBlobs:
-#     - |
-#                 <camera name='asus_xtion_rgb_camera'>
-#                     <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
-#                     <horizontal_fov>1.02259</horizontal_fov>
-#                     <distortion>
-#                         <k1>0</k1>
-#                         <k2>0</k2>
-#                         <k3>0</k3>
-#                         <p1>0</p1>
-#                         <p2>0</p2>
-#                         <center>319.5 239.5</center>
-#                     </distortion>
-#                     <image>
-#                         <width>640</width>
-#                         <height>480</height>
-#                         <format>R8G8B8</format>
-#                     </image>
-#                     <clip>
-#                         <near>0.02</near>
-#                         <far>3000</far>
-#                     </clip>
-#                 </camera>
-#     - |
-#                 <plugin filename="libgazebo_yarp_camera.so"  name="xtion_camera_rgb_plugin">
-#                     <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_xtion_camera_rgb.ini</yarpConfigurationFile>
-#                 </plugin>
+  - linkName: head_link
+    frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
+    sensorName: "realsense_depth"
+    exportFrameInURDF: No
+    sensorType: "depth"
+    updateRate: 30
+    sensorBlobs:
+    - |
+                <camera name='realsense_depth'>
+                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
+                    <horizontal_fov>1.02259</horizontal_fov>
+                    <distortion>
+                        <k1>0</k1>
+                        <k2>0</k2>
+                        <k3>0</k3>
+                        <p1>0</p1>
+                        <p2>0</p2>
+                        <center>319.5 239.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>3000</far>
+                    </clip>
+                </camera>
+    - |
+                <plugin filename="libgazebo_yarp_depthCamera.so"  name="depth_camera_plugin">
+                    <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_rgbd_camera.ini</yarpConfigurationFile>
+                </plugin>
+  - linkName: head_link
+    frameName: SCSYS_HEAD_ASUS_XTION_RGB
+    sensorName: "realsense_rgb"
+    exportFrameInURDF: No
+    sensorType: "camera"
+    updateRate: 30
+    sensorBlobs:
+    - |
+                <camera name='realsense_rgb'>
+                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
+                    <horizontal_fov>1.02259</horizontal_fov>
+                    <distortion>
+                        <k1>0</k1>
+                        <k2>0</k2>
+                        <k3>0</k3>
+                        <p1>0</p1>
+                        <p2>0</p2>
+                        <center>319.5 239.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>3000</far>
+                    </clip>
+                </camera>
+    - |
+                <plugin filename="libgazebo_yarp_camera.so"  name="rgb_camera_plugin">
+                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
+                </plugin>
 
 # Workaround options
 reverseRotationAxis:
@@ -1146,6 +1146,12 @@ XMLBlobs:
             <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
               <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
             </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+              </plugin>
             </gazebo>
     - |
             <gazebo>
