@@ -9,5 +9,5 @@
             <elem name="Laser">  las360 </elem> 
         </paramlist>
     </action>
-    <action phase="shutdown" level="20" type="detach" />
+    <action phase="shutdown" level="5" type="detach" />
 </device>
