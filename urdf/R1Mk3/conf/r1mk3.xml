@@ -24,7 +24,7 @@
 
     <!-- SENSORS -->
     <xi:include href="wrappers/sensors/lidar_wrapper.xml" />
-    <xi:include href="wrappers/sensors/rgbf_camera_wrapper.xml" />
+    <xi:include href="wrappers/sensors/rgbd_camera_wrapper.xml" />
 
     </devices>
 </robot>
