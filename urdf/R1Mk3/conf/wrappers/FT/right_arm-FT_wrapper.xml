@@ -5,7 +5,7 @@
         <param name="name"> ${portprefix}/right_arm/FT  </param>
         <action phase="startup" level="10" type="attach">
             <paramlist name="networks">
-                <elem name="FirstStrain"> r_arm_ft_sensor_inertial_hardware_device </elem>
+                <elem name="FirstStrain"> r1mk3_right_arm_ft </elem>
             </paramlist>
         </action>
         <action phase="shutdown" level="15" type="detach" />

@@ -1148,17 +1148,17 @@ XMLBlobs:
             </plugin>
             </gazebo>
     - |
-        <gazebo>
-          <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
-            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
-          </plugin>
-        </gazebo>
+            <gazebo>
+              <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
+                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
     - |
-        <gazebo>
-          <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-            <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_mobile_base.ini</yarpConfigurationFile>
-          </plugin>
-        </gazebo>
+            <gazebo>
+              <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+                <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_mobile_base.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
     - |
             <gazebo>
               <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
