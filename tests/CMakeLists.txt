@@ -12,3 +12,5 @@ macro(add_r1_model_test yarpRobotName)
              COMMAND r1-model-test --model ${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/robots/${yarpRobotName}/model.urdf)
     endif()
 endmacro()
+
+add_r1_model_test(R1Mk3Gazebo)
