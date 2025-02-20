@@ -1,0 +1,1328 @@
+# Robot name
+robotName: R1Mk3
+
+# Model base origin
+originXYZ: [0.0,0.0,0.90]
+originRPY: [0.0,0.0,0.0]
+# Meshes options
+scale: [0.001,0.001,0.001]
+forcelowercase: Yes
+filenameformat: "package://R1Mk3/meshes/simmechanics/%s.stl"
+root: mobile_base_body_link
+
+#stringToRemoveFromMeshFileName: "_prt" # TODO creo2urdf does not work here
+
+# Rename options (map Creo names to URDF names)
+rename:
+    SIM_EMORPH_MOB_BASE_BODY--SIM_EMORPH_MOBILE_BASE_L_TYRE: mobile_base_l_wheel_joint
+    SIM_EMORPH_MOB_BASE_BODY--SIM_EMORPH_MOBILE_BASE_R_TYRE: mobile_base_r_wheel_joint
+    SIM_EMORPH_MOB_BASE_BODY--SIM_EMORPH_TORSO_SLIDER_EQ: torso_heave_eq_joint
+    SIM_EMORPH_TORSO_SLIDER_EQ--SIM_EMORPH_TORSO_PIN_EQ: torso_roll_eq_joint
+    SIM_EMORPH_TORSO_PIN_EQ--SIM_EMORPH_TORSO_PLATFORM: torso_pitch_eq_joint
+    SIM_EMORPH_TORSO_PLATFORM--SIM_EMORPH_CHEST: torso_yaw_joint
+    SIM_EMORPH_CHEST--SIM_CER_EMORPH_NECK: neck_pitch_joint
+    SIM_CER_EMORPH_NECK--SIM_CER_EMORPH_HEAD: neck_yaw_joint
+    SIM_EMORPH_MOB_BASE_BODY: mobile_base_body_link
+    SIM_EMORPH_MOBILE_BASE_L_TYRE: mobile_base_l_tyre_link
+    SIM_EMORPH_MOBILE_BASE_R_TYRE: mobile_base_r_tyre_link
+    SIM_EMORPH_TORSO_SLIDER_EQ: torso_slider_eq_link
+    SIM_EMORPH_TORSO_PIN_EQ: torso_pin_eq_link
+    SIM_EMORPH_TORSO_PLATFORM: torso_platform_link
+    SIM_EMORPH_CHEST: chest_link
+    SIM_CER_EMORPH_NECK: neck_link
+    SIM_CER_EMORPH_HEAD: head_link
+    SIM_EMORPH_L_SHOULDER_1: l_shoulder_1
+    SIM_EMORPH_CHEST--SIM_EMORPH_L_SHOULDER_1: l_shoulder_pitch
+    SIM_EMORPH_L_SHOULDER_2: l_shoulder_2
+    SIM_EMORPH_L_SHOULDER_1--SIM_EMORPH_L_SHOULDER_2: l_shoulder_roll
+    SIM_EMORPH_L_SHOULDER_3: l_shoulder_3
+    SIM_EMORPH_L_SHOULDER_2--SIM_EMORPH_L_SHOULDER_3: l_arm_ft_sensor
+    SIM_EMORPH_L_UPPERARM: l_upper_arm
+    SIM_EMORPH_L_SHOULDER_3--SIM_EMORPH_L_UPPERARM: l_shoulder_yaw
+    SIM_EMORPH_R_SHOULDER_1: r_shoulder_1
+    SIM_EMORPH_CHEST--SIM_EMORPH_R_SHOULDER_1: r_shoulder_pitch
+    SIM_EMORPH_R_SHOULDER_2: r_shoulder_2
+    SIM_EMORPH_R_SHOULDER_1--SIM_EMORPH_R_SHOULDER_2: r_shoulder_roll
+    SIM_EMORPH_R_SHOULDER_3: r_shoulder_3
+    SIM_EMORPH_R_SHOULDER_2--SIM_EMORPH_R_SHOULDER_3: r_arm_ft_sensor
+    SIM_EMORPH_R_UPPERARM: r_upper_arm
+    SIM_EMORPH_R_SHOULDER_3--SIM_EMORPH_R_UPPERARM: r_shoulder_yaw
+    SIM_EMORPH_L_FOREARM: l_forearm
+    SIM_EMORPH_L_WRIST_1: l_wrist_1
+    SIM_EMORPH_L_WRIST_2: l_wrist_2
+    SIM_EMORPH_L_HAND_PALM: l_hand_palm
+    SIM_EMORPH_L_HAND_THUMB_1: l_hand_thumb_1
+    SIM_EMORPH_L_HAND_THUMB_2: l_hand_thumb_2
+    SIM_EMORPH_L_HAND_THUMB_3: l_hand_thumb_3
+    SIM_EMORPH_L_HAND_INDEX_1: l_hand_index_1
+    SIM_EMORPH_L_HAND_INDEX_2: l_hand_index_2
+    SIM_EMORPH_L_HAND_INDEX_3: l_hand_index_3
+    SIM_EMORPH_L_HAND_MIDDLE_1: l_hand_middle_1
+    SIM_EMORPH_L_HAND_MIDDLE_2: l_hand_middle_2
+    SIM_EMORPH_L_HAND_RING_1: l_hand_ring_1
+    SIM_EMORPH_L_HAND_RING_2: l_hand_ring_2
+    SIM_EMORPH_L_HAND_PINKIE_1: l_hand_pinkie_1
+    SIM_EMORPH_L_HAND_PINKIE_2: l_hand_pinkie_2
+    SIM_EMORPH_L_UPPERARM--SIM_EMORPH_L_FOREARM: l_elbow
+    SIM_EMORPH_L_FOREARM--SIM_EMORPH_L_WRIST_1: l_wrist_yaw
+    SIM_EMORPH_L_WRIST_1--SIM_EMORPH_L_WRIST_2: l_wrist_roll
+    SIM_EMORPH_L_WRIST_2--SIM_EMORPH_L_HAND_PALM: l_wrist_pitch
+    SIM_EMORPH_L_HAND_PALM--SIM_EMORPH_L_HAND_THUMB_1: l_thumb_add
+    SIM_EMORPH_L_HAND_THUMB_1--SIM_EMORPH_L_HAND_THUMB_2: l_thumb_prox
+    SIM_EMORPH_L_HAND_THUMB_2--SIM_EMORPH_L_HAND_THUMB_3: l_thumb_dist
+    SIM_EMORPH_L_HAND_PALM--SIM_EMORPH_L_HAND_INDEX_1: l_index_add
+    SIM_EMORPH_L_HAND_INDEX_1--SIM_EMORPH_L_HAND_INDEX_2: l_index_prox
+    SIM_EMORPH_L_HAND_INDEX_2--SIM_EMORPH_L_HAND_INDEX_3: l_index_dist
+    SIM_EMORPH_L_HAND_PALM--SIM_EMORPH_L_HAND_MIDDLE_1: l_middle_prox
+    SIM_EMORPH_L_HAND_MIDDLE_1--SIM_EMORPH_L_HAND_MIDDLE_2: l_middle_dist
+    SIM_EMORPH_L_HAND_PALM--SIM_EMORPH_L_HAND_RING_1: l_ring_prox
+    SIM_EMORPH_L_HAND_RING_1--SIM_EMORPH_L_HAND_RING_2: l_ring_dist
+    SIM_EMORPH_L_HAND_PALM--SIM_EMORPH_L_HAND_PINKIE_1: l_pinkie_prox
+    SIM_EMORPH_L_HAND_PINKIE_1--SIM_EMORPH_L_HAND_PINKIE_2: l_pinkie_dist
+    # right forearm
+    SIM_EMORPH_R_FOREARM: r_forearm
+    SIM_EMORPH_R_WRIST_1: r_wrist_1
+    SIM_EMORPH_R_WRIST_2: r_wrist_2
+    SIM_EMORPH_R_HAND_PALM: r_hand_palm
+    SIM_EMORPH_R_HAND_THUMB_1: r_hand_thumb_1
+    SIM_EMORPH_R_HAND_THUMB_2: r_hand_thumb_2
+    SIM_EMORPH_R_HAND_THUMB_3: r_hand_thumb_3
+    SIM_EMORPH_R_HAND_INDEX_1: r_hand_index_1
+    SIM_EMORPH_R_HAND_INDEX_2: r_hand_index_2
+    SIM_EMORPH_R_HAND_INDEX_3: r_hand_index_3
+    SIM_EMORPH_R_HAND_MIDDLE_1: r_hand_middle_1
+    SIM_EMORPH_R_HAND_MIDDLE_2: r_hand_middle_2
+    SIM_EMORPH_R_HAND_RING_1: r_hand_ring_1
+    SIM_EMORPH_R_HAND_RING_2: r_hand_ring_2
+    SIM_EMORPH_R_HAND_PINKIE_1: r_hand_pinkie_1
+    SIM_EMORPH_R_HAND_PINKIE_2: r_hand_pinkie_2
+    SIM_EMORPH_R_UPPERARM--SIM_EMORPH_R_FOREARM: r_elbow
+    SIM_EMORPH_R_FOREARM--SIM_EMORPH_R_WRIST_1: r_wrist_yaw
+    SIM_EMORPH_R_WRIST_1--SIM_EMORPH_R_WRIST_2: r_wrist_roll
+    SIM_EMORPH_R_WRIST_2--SIM_EMORPH_R_HAND_PALM: r_wrist_pitch
+    SIM_EMORPH_R_HAND_PALM--SIM_EMORPH_R_HAND_THUMB_1: r_thumb_add
+    SIM_EMORPH_R_HAND_THUMB_1--SIM_EMORPH_R_HAND_THUMB_2: r_thumb_prox
+    SIM_EMORPH_R_HAND_THUMB_2--SIM_EMORPH_R_HAND_THUMB_3: r_thumb_dist
+    SIM_EMORPH_R_HAND_PALM--SIM_EMORPH_R_HAND_INDEX_1: r_index_add
+    SIM_EMORPH_R_HAND_INDEX_1--SIM_EMORPH_R_HAND_INDEX_2: r_index_prox
+    SIM_EMORPH_R_HAND_INDEX_2--SIM_EMORPH_R_HAND_INDEX_3: r_index_dist
+    SIM_EMORPH_R_HAND_PALM--SIM_EMORPH_R_HAND_MIDDLE_1: r_middle_prox
+    SIM_EMORPH_R_HAND_MIDDLE_1--SIM_EMORPH_R_HAND_MIDDLE_2: r_middle_dist
+    SIM_EMORPH_R_HAND_PALM--SIM_EMORPH_R_HAND_RING_1: r_ring_prox
+    SIM_EMORPH_R_HAND_RING_1--SIM_EMORPH_R_HAND_RING_2: r_ring_dist
+    SIM_EMORPH_R_HAND_PALM--SIM_EMORPH_R_HAND_PINKIE_1: r_pinkie_prox
+    SIM_EMORPH_R_HAND_PINKIE_1--SIM_EMORPH_R_HAND_PINKIE_2: r_pinkie_dist
+
+# Frames options
+exportAllUseradded: No
+
+exportedFrames:
+  - frameName: SCSYS_TORSO_TRIPOD_PLATFORM_X_B
+    frameReferenceLink: torso_platform_link
+    exportedFrameName: torso_tripod_root
+  - frameName: SCSYS_CHEST
+    frameReferenceLink: chest_link
+    exportedFrameName: torso
+  - frameName: SCSYS_MOBILE_BASE_BODY
+    frameReferenceLink: mobile_base_body_link
+    exportedFrameName: base_link
+  - frameName: SCSYS_MOBILE_BASE_LIDAR
+    frameReferenceLink: mobile_base_body_link
+    exportedFrameName: mobile_base_lidar
+  - frameName: SCSYS_HEAD_ASUS_XTION_RGB
+    frameReferenceLink: head_link
+    exportedFrameName: depth_rgb
+  - frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
+    frameReferenceLink: head_link
+    exportedFrameName: depth
+  - frameName: SCSYS_HEAD_ASUS_XTION_CENTER
+    frameReferenceLink: head_link
+    exportedFrameName: depth_center
+  - frameName: SCSYS_HEAD_LEOPARD_CYCLOPIC
+    frameReferenceLink: head_link
+    exportedFrameName: head_leopard_cyclopic
+  - frameName: SCSYS_HEAD_LEOPARD_RIGHT
+    frameReferenceLink: head_link
+    exportedFrameName: head_leopard_right
+  - frameName: SCSYS_HEAD_LEOPARD_LEFT
+    frameReferenceLink: head_link
+    exportedFrameName: head_leopard_left
+  - frameName: SCSYS_GAZE
+    frameReferenceLink: head_link
+    exportedFrameName: gaze
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_0
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_1
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_2
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_3
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_4
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_5
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_6
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_7
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_8
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_9
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_10
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_11
+  # l_index
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_0
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_1
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_2
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_3
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_4
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_5
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_6
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_7
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_8
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_9
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_10
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_11
+  # l_middle
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_0
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_1
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_2
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_3
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_4
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_5
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_6
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_7
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_8
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_9
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_10
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_11
+  # l_ring
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_0
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_1
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_2
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_3
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_4
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_5
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_6
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_7
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_8
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_9
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_10
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_11
+  # l_pinkie
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_0
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_1
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_2
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_3
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_4
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_5
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_6
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_7
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_8
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_9
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_10
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_11
+  # r_thumb
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_0
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_1
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_2
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_3
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_4
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_5
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_6
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_7
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_8
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_9
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_10
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_11
+  # r_index
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_0
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_1
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_2
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_3
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_4
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_5
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_6
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_7
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_8
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_9
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_10
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_11
+  # r_middle
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_0
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_1
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_2
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_3
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_4
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_5
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_6
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_7
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_8
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_9
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_10
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_11
+  # r_ring
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_0
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_1
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_2
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_3
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_4
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_5
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_6
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_7
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_8
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_9
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_10
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_11
+  # r_pinkie
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_0
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_1
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_2
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_3
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_4
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_5
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_6
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_7
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_8
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_9
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_10
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_11
+
+linkFrames:
+  - linkName: mobile_base_body_link
+    frameName: SCSYS_MOBILE_BASE_BODY
+  - linkName: mobile_base_l_tyre_link
+    frameName: SCSYS_MOBILE_BASE_L_TYRE
+  - linkName: mobile_base_r_tyre_link
+    frameName: SCSYS_MOBILE_BASE_R_TYRE
+  - linkName: torso_slider_eq_link
+    frameName: SCSYS_TORSO_SLIDER_EQ
+  - linkName: torso_pin_eq_link
+    frameName: SCSYS_TORSO_PIN_EQ
+  - linkName: torso_platform_link
+    frameName: SCSYS_TORSO_PLATFORM
+  - linkName: chest_link
+    frameName: SCSYS_CHEST
+  - linkName: neck_link
+    frameName: SCSYS_NECK
+  - linkName: head_link
+    frameName: SCSYS_HEAD
+  - linkName: l_shoulder_1
+    frameName: SCSYS_L_SHOULDER_1
+  - linkName: l_shoulder_2
+    frameName: SCSYS_L_SHOULDER_2
+  - linkName: l_shoulder_3
+    frameName: SCSYS_L_SHOULDER_3
+  - linkName: l_upper_arm
+    frameName: SCSYS_L_UPPERARM
+  - linkName: r_shoulder_2
+    frameName: SCSYS_R_SHOULDER_2_FT
+  - linkName: r_shoulder_1
+    frameName: SCSYS_R_SHOULDER_1
+  - linkName: r_shoulder_2
+    frameName: SCSYS_R_SHOULDER_2
+  - linkName: r_shoulder_3
+    frameName: SCSYS_R_SHOULDER_3
+  - linkName: r_upper_arm
+    frameName: SCSYS_R_UPPERARM
+  - linkName: l_upperarm
+    frameName: SCSYS_L_UPPERARM
+  - linkName: l_forearm
+    frameName: SCSYS_L_FOREARM
+  - linkName: l_wrist_1
+    frameName: SCSYS_L_WRIST_1
+  - linkName: l_wrist_2
+    frameName: SCSYS_L_WRIST_2
+  - linkName: l_hand_palm
+    frameName: SCSYS_L_HAND_PALM
+  - linkName: l_hand_thumb_1
+    frameName: SCSYS_L_HAND_THUMB_1
+  - linkName: l_hand_thumb_2
+    frameName: SCSYS_L_HAND_THUMB_2
+  - linkName: l_hand_thumb_3
+    frameName: SCSYS_L_HAND_THUMB_3
+  - linkName: l_hand_index_1
+    frameName: SCSYS_L_HAND_INDEX_1
+  - linkName: l_hand_index_2
+    frameName: SCSYS_L_HAND_INDEX_2
+  - linkName: l_hand_index_3
+    frameName: SCSYS_L_HAND_INDEX_3
+  - linkName: l_hand_middle_1
+    frameName: SCSYS_L_HAND_MIDDLE_1
+  - linkName: l_hand_middle_2
+    frameName: SCSYS_L_HAND_MIDDLE_2
+  - linkName: l_hand_ring_1
+    frameName: SCSYS_L_HAND_RING_1
+  - linkName: l_hand_ring_2
+    frameName: SCSYS_L_HAND_RING_2
+  - linkName: l_hand_pinkie_1
+    frameName: SCSYS_L_HAND_PINKIE_1
+  - linkName: l_hand_pinkie_2
+    frameName: SCSYS_L_HAND_PINKIE_2
+  - linkName: r_upperarm
+    frameName: SCSYS_R_UPPERARM
+  - linkName: r_forearm
+    frameName: SCSYS_R_FOREARM
+  - linkName: r_wrist_1
+    frameName: SCSYS_R_WRIST_1
+  - linkName: r_wrist_2
+    frameName: SCSYS_R_WRIST_2
+  - linkName: r_hand_palm
+    frameName: SCSYS_R_HAND_PALM
+  - linkName: r_hand_thumb_1
+    frameName: SCSYS_R_HAND_THUMB_1
+  - linkName: r_hand_thumb_2
+    frameName: SCSYS_R_HAND_THUMB_2
+  - linkName: r_hand_thumb_3
+    frameName: SCSYS_R_HAND_THUMB_3
+  - linkName: r_hand_index_1
+    frameName: SCSYS_R_HAND_INDEX_1
+  - linkName: r_hand_index_2
+    frameName: SCSYS_R_HAND_INDEX_2
+  - linkName: r_hand_index_3
+    frameName: SCSYS_R_HAND_INDEX_3
+  - linkName: r_hand_middle_1
+    frameName: SCSYS_R_HAND_MIDDLE_1
+  - linkName: r_hand_middle_2
+    frameName: SCSYS_R_HAND_MIDDLE_2
+  - linkName: r_hand_ring_1
+    frameName: SCSYS_R_HAND_RING_1
+  - linkName: r_hand_ring_2
+    frameName: SCSYS_R_HAND_RING_2
+  - linkName: r_hand_pinkie_1
+    frameName: SCSYS_R_HAND_PINKIE_1
+  - linkName: r_hand_pinkie_2
+    frameName: SCSYS_R_HAND_PINKIE_2
+
+# Sensors options
+forceTorqueSensors:
+    - jointName: l_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_L_SHOULDER_2_FT
+      linkName: l_shoulder_2
+      sensorName: l_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: r_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_R_SHOULDER_2_FT
+      linkName: r_shoulder_2
+      sensorName: r_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
+
+sensors:
+  - linkName: mobile_base_body_link
+    frameName: SCSYS_MOBILE_BASE_LIDAR
+    sensorName: "base_laser"
+    exportFrameInURDF: No
+    sensorType: "ray"
+    updateRate: 40
+    sensorBlobs:
+    - |
+                <ray>
+                 <scan>
+                  <horizontal>
+                   <samples>360</samples>
+                   <resolution>1</resolution>
+                   <min_angle>-3.14</min_angle>
+                   <max_angle>3.14</max_angle>
+                  </horizontal>
+                 </scan>
+                 <range>
+                  <min>0.10</min>
+                  <max>5.0</max>
+                  <resolution>0.01</resolution>
+                 </range>
+                 <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.005</stddev>
+                 </noise>
+                </ray>
+    - |
+                <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
+                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+                </plugin>
+#   # TODO But multicamera actually exists??
+#   # - linkName: head_link
+#   #   frameName: SCSYS_HEAD_LEOPARD_CYCLOPIC
+#   #   sensorName: "multicamera_sensor"
+#   #   exportFrameInURDF: No
+#   #   sensorType: "multicamera"
+#   #   updateRate: 30
+#   #   sensorBlobs:
+#   #   - |
+#   #       <camera name='left_camera'>
+#   #         <pose>-0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
+#   #         <horizontal_fov>1.5708</horizontal_fov>
+#   #         <image>
+#   #            <width>640</width>
+#   #            <height>480</height>
+#   #         </image>
+#   #         <clip>
+#   #            <near>0.1</near>
+#   #            <far>100</far>
+#   #         </clip>
+#   #       </camera>
+#   #   - |
+#   #       <camera name='right_camera'>
+#   #         <pose>0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
+#   #         <horizontal_fov>1.5708</horizontal_fov>
+#   #         <image>
+#   #           <width>640</width>
+#   #           <height>480</height>
+#   #         </image>
+#   #         <clip>
+#   #           <near>0.1</near>
+#   #           <far>100</far>
+#   #         </clip>
+#   #       </camera>
+#   #   - |
+#   #               <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
+#   #                   <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_multicamera/gazebo_cer_multicamera.ini</yarpConfigurationFile>
+#   #               </plugin>
+  - linkName: head_link
+    frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
+    sensorName: "realsense_depth"
+    exportFrameInURDF: No
+    sensorType: "depth"
+    updateRate: 30
+    sensorBlobs:
+    - |
+                <camera name='realsense_depth'>
+                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
+                    <horizontal_fov>1.02259</horizontal_fov>
+                    <distortion>
+                        <k1>0</k1>
+                        <k2>0</k2>
+                        <k3>0</k3>
+                        <p1>0</p1>
+                        <p2>0</p2>
+                        <center>319.5 239.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>3000</far>
+                    </clip>
+                </camera>
+    - |
+                <plugin filename="libgazebo_yarp_depthCamera.so"  name="depth_camera_plugin">
+                    <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_rgbd_camera.ini</yarpConfigurationFile>
+                </plugin>
+  - linkName: head_link
+    frameName: SCSYS_HEAD_ASUS_XTION_RGB
+    sensorName: "realsense_rgb"
+    exportFrameInURDF: No
+    sensorType: "camera"
+    updateRate: 30
+    sensorBlobs:
+    - |
+                <camera name='realsense_rgb'>
+                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
+                    <horizontal_fov>1.02259</horizontal_fov>
+                    <distortion>
+                        <k1>0</k1>
+                        <k2>0</k2>
+                        <k3>0</k3>
+                        <p1>0</p1>
+                        <p2>0</p2>
+                        <center>319.5 239.5</center>
+                    </distortion>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>3000</far>
+                    </clip>
+                </camera>
+    - |
+                <plugin filename="libgazebo_yarp_camera.so"  name="rgb_camera_plugin">
+                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
+                </plugin>
+
+# Workaround options
+reverseRotationAxis:
+  torso_yaw_joint
+  mobile_base_l_wheel_joint
+  mobile_base_r_wheel_joint
+  torso_roll_eq_joint
+  neck_pitch_joint
+  r_shoulder_pitch
+  r_shoulder_yaw
+  r_shoulder_roll
+  l_shoulder_roll
+  l_elbow
+  l_wrist_roll
+  l_wrist_yaw
+  l_thumb_add
+  l_thumb_prox
+  l_thumb_dist
+  l_index_prox
+  l_index_dist
+  l_index_add
+  l_middle_prox
+  l_middle_dist
+  l_pinkie_prox
+  l_pinkie_dist
+  r_thumb_dist
+  r_thumb_prox
+  r_index_prox
+  r_index_dist
+  r_middle_prox
+  r_middle_dist
+  r_ring_dist
+  r_ring_prox
+  r_pinkie_dist
+  r_pinkie_prox
+
+assignedInertias:
+  # This is due to https://github.com/robotology/icub-models/issues/33
+  - linkName: torso_pin_eq_link
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_shoulder_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_shoulder_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_shoulder_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_forearm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_wrist_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_wrist_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_palm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_middle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_middle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_ring_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_ring_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_pinkie_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_pinkie_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_shoulder_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_shoulder_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_shoulder_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_forearm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_wrist_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_wrist_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_palm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_middle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_middle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_ring_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_ring_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_pinkie_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_pinkie_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+
+
+# assignedCollisionGeometry:
+#   - linkName: mobile_base_l_tyre_link
+#     geometricShape:
+#       shape: cylinder
+#       radius: 0.16
+#       lenght: 0.005
+#       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
+#   - linkName: mobile_base_r_tyre_link
+#     geometricShape:
+#       shape: cylinder
+#       radius: 0.16
+#       lenght: 0.005
+#       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
+
+XMLBlobs:
+    - |
+            <gazebo>
+            <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
+              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_torso.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
+              <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_head.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+ # left arm
+    - |
+            <gazebo>
+            <plugin name="controlboard_left_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
+            <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_arm.ini</yarpConfigurationFile>
+              <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_elbow">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_wrist_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_wrist_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_wrist_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    # right arm
+    - |
+            <gazebo>
+            <plugin name="controlboard_right_arm" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
+            <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_arm.ini</yarpConfigurationFile>
+              <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_elbow">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_wrist_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_wrist_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_wrist_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
+                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+                <yarpConfigurationFile>model://R1Mk3/conf/gz_sim_cer_mobile_base.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+                <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+                <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+              </plugin>
+            </gazebo>
+
+    - |
+      <gazebo reference="mobile_base_body_link">
+          <collision>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <friction>
+                <ode>
+                  <mu>0.0</mu>
+                  <mu2>0.0</mu2>
+                </ode>
+              </friction>
+            </surface>
+          </collision>
+      </gazebo>
+    - |
+      <gazebo>
+        <pose>0 0 0.16 0 0 0</pose>
+      </gazebo>
+    - |
+      <gazebo reference="mobile_base_l_wheel_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="mobile_base_r_wheel_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="torso_heave_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="torso_roll_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="torso_pitch_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="torso_yaw_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="neck_pitch_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="neck_yaw_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_shoulder_pitch_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_shoulder_roll_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_shoulder_yaw_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_elbow_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_wrist_pronosupination_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_wrist_heave_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_wrist_roll_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_wrist_pitch_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_hand_paddle_proximal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_hand_paddle_distal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_hand_thumb_proximal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="l_hand_thumb_distal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_shoulder_pitch_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_shoulder_roll_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_shoulder_yaw_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_elbow_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_wrist_pronosupination_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_wrist_heave_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_wrist_roll_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_wrist_pitch_eq_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_hand_paddle_proximal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_hand_paddle_distal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_hand_thumb_proximal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
+    - |
+      <gazebo reference="r_hand_thumb_distal_joint">
+        <implicitSpringDamper>1</implicitSpringDamper>
+      </gazebo>
