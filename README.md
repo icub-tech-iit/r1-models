@@ -38,7 +38,7 @@ Alternatively, if `YARP` has been installed using the [robotology-superbuild](ht
 To use `R1Mk3` models with `gz sim`, instead, you can rely on [gz-sim-yarp-plugins](https://github.com/robotology/gz-sim-yarp-plugins?tab=readme-ov-file#installation) and the following env variable mush be configured:
 
 ```sh
-export GZ_SIM_RESOURCE_PATH = ${GZ_SIM_RESOURCE_PATH}:<install-prefix>/share/R1Mk3/robots
+export GZ_SIM_RESOURCE_PATH=${GZ_SIM_RESOURCE_PATH}:<install-prefix>/share/R1Mk3/robots
 ```
 
 ## URDF generation
