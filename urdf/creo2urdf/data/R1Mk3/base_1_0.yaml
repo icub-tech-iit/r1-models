@@ -9,6 +9,7 @@ scale: [0.001,0.001,0.001]
 forcelowercase: Yes
 filenameformat: "package://R1Mk3/meshes/simmechanics/%s.stl"
 root: mobile_base_body_link
+meshQuality: 10
 
 #stringToRemoveFromMeshFileName: "_prt" # TODO creo2urdf does not work here
 
