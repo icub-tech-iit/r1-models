@@ -838,7 +838,7 @@ assignedCollisionGeometry:
        shape: cylinder
        radius: 0.16
        length: 0.005
-       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
+       origin: [0.0,-0.03,0.0,1.57079632679,0.0,0.0]
 
 XMLBlobs:
     - |
