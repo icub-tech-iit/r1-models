@@ -826,19 +826,19 @@ reverseRotationAxis:
   r_pinkie_dist
   r_pinkie_prox
 
-# assignedCollisionGeometry:
-#   - linkName: mobile_base_l_tyre_link
-#     geometricShape:
-#       shape: cylinder
-#       radius: 0.16
-#       lenght: 0.005
-#       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
-#   - linkName: mobile_base_r_tyre_link
-#     geometricShape:
-#       shape: cylinder
-#       radius: 0.16
-#       lenght: 0.005
-#       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
+assignedCollisionGeometry:
+   - linkName: mobile_base_l_tyre_link
+     geometricShape:
+       shape: cylinder
+       radius: 0.16
+       lenght: 0.005
+       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
+   - linkName: mobile_base_r_tyre_link
+     geometricShape:
+       shape: cylinder
+       radius: 0.16
+       lenght: 0.005
+       origin: [0.0,0.03,0.0,1.57079632679,0.0,0.0]
 
 XMLBlobs:
     - |
