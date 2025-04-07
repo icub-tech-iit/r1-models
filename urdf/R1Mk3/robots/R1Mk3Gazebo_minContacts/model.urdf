@@ -52,10 +52,13 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0.03 0" rpy="1.57079632679 -0 0"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <cylinder radius="0.16" length="0.005"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_mobile_base_l_tyre.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="mobile_base_r_wheel_joint" type="revolute">
@@ -82,10 +85,13 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0.03 0" rpy="1.57079632679 -0 0"/>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <cylinder radius="0.16" length="0.005"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_mobile_base_r_tyre.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_heave_eq_joint" type="prismatic">
