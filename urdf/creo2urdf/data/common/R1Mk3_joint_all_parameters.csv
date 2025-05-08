@@ -5,8 +5,8 @@ torso_pitch_eq_joint,-30,30,2,0,50,
 torso_yaw_joint,-60,60,2,0,30,
 neck_pitch_joint,-30,50,2,0,30,
 neck_yaw_joint,-80,80,2,0,30,
-mobile_base_l_wheel_joint,-360,360,0.5,0,100,30
-mobile_base_r_wheel_joint,-360,360,0.5,0,100,30
+mobile_base_l_wheel_joint,-100000000,100000000,0.5,0,100,30
+mobile_base_r_wheel_joint,-100000000,100000000,0.5,0,100,30
 r_shoulder_pitch,-170,35,2,0,120,
 r_shoulder_roll,-15,150,2,0,120,
 r_shoulder_yaw,-52,82,2,0,120,
