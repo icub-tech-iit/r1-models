@@ -794,8 +794,6 @@ sensors:
 # Workaround options
 reverseRotationAxis:
   torso_yaw_joint
-  mobile_base_l_wheel_joint
-  mobile_base_r_wheel_joint
   torso_roll_eq_joint
   neck_pitch_joint
   r_shoulder_pitch
