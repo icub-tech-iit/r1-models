@@ -30,7 +30,7 @@
   </link>
   <joint name="mobile_base_l_wheel_joint" type="revolute">
     <origin xyz="0 0.1389999999999999 -1.1102230246251565e-16" rpy="0 7.662700497994973e-16 0"/>
-    <axis xyz="0 -1 -0"/>
+    <axis xyz="0 1 0"/>
     <parent link="mobile_base_body_link"/>
     <child link="mobile_base_l_tyre_link"/>
     <limit lower="-1.7453292519943295e+6" upper="1.7453292519943295e+6" effort="1e+9" velocity="1e+9"/>
@@ -60,7 +60,7 @@
   </link>
   <joint name="mobile_base_r_wheel_joint" type="revolute">
     <origin xyz="0 -0.13900000000000004 -2.7755575615628914e-17" rpy="0 -0 0"/>
-    <axis xyz="-0 -1 -0"/>
+    <axis xyz="0 1 0"/>
     <parent link="mobile_base_body_link"/>
     <child link="mobile_base_r_tyre_link"/>
     <limit lower="-1.7453292519943295e+6" upper="1.7453292519943295e+6" effort="1e+9" velocity="1e+9"/>
