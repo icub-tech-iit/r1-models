@@ -33,7 +33,7 @@
     <axis xyz="0 -1 -0"/>
     <parent link="mobile_base_body_link"/>
     <child link="mobile_base_l_tyre_link"/>
-    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="1e+9" velocity="1e+9"/>
+    <limit lower="-1.7453292519943295e+6" upper="1.7453292519943295e+6" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="0.5" friction="0"/>
   </joint>
   <link name="mobile_base_l_tyre_link">
@@ -63,7 +63,7 @@
     <axis xyz="-0 -1 -0"/>
     <parent link="mobile_base_body_link"/>
     <child link="mobile_base_r_tyre_link"/>
-    <limit lower="-6.283185307179586" upper="6.283185307179586" effort="1e+9" velocity="1e+9"/>
+    <limit lower="-1.7453292519943295e+6" upper="1.7453292519943295e+6" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="0.5" friction="0"/>
   </joint>
   <link name="mobile_base_r_tyre_link">
@@ -82,7 +82,7 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0.03 0" rpy="1.57079632679 -0 0"/>
+      <origin xyz="0 -0.03 0" rpy="1.57079632679 -0 0"/>
       <geometry>
         <cylinder radius="0.16" length="0.005"/>
       </geometry>
