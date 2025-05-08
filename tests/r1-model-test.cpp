@@ -244,11 +244,11 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotR1Mk3Mod
     std::vector<std::string> axisNames;
     std::vector<iDynTree::Direction> expectedDirectionInRootLink;
     axisNames.push_back("mobile_base_l_wheel_joint");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,-1,0));
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,1,0));
     // axisNames.push_back("torso_heave_eq_joint"); //non revolute
     // expectedDirectionInRootLink.push_back(iDynTree::Direction(0,-1,0));
     axisNames.push_back("mobile_base_r_wheel_joint");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,-1,0));
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,1,0));
     axisNames.push_back("torso_roll_eq_joint");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(1,0,0));
     axisNames.push_back("torso_pitch_eq_joint");
