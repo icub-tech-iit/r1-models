@@ -254,13 +254,13 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotR1Mk3Mod
     axisNames.push_back("torso_pitch_eq_joint");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0,-1,0));
     axisNames.push_back("torso_yaw_joint");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,0,-1));
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,0,1));
     axisNames.push_back("l_shoulder_pitch");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(8.67743e-05,0.970296,0.24192));
     axisNames.push_back("r_shoulder_pitch");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-8.67743e-05,0.970296,-0.24192));
     axisNames.push_back("neck_pitch_joint");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,-1,0));
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,1,0));
     axisNames.push_back("neck_yaw_joint");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.173648,1.18476e-14,-0.984808));
     axisNames.push_back("r_shoulder_roll");
