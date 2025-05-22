@@ -180,7 +180,7 @@
   </link>
   <joint name="torso_yaw_joint" type="revolute">
     <origin xyz="2.220446049250313e-16 -1.6880686544087094e-16 0.06950000000000012" rpy="-1.0898835157993226e-15 1.4574786319396409e-16 2.150984683485474e-15"/>
-    <axis xyz="1.4574786319396409e-16 1.0898835157993226e-15 -1"/>
+    <axis xyz="-1.4574786319396409e-16 -1.0898835157993226e-15 1"/>
     <parent link="torso_platform_link"/>
     <child link="chest_link"/>
     <limit lower="-1.0471975511965976" upper="1.0471975511965976" effort="1e+9" velocity="1e+9"/>
@@ -210,7 +210,7 @@
   </link>
   <joint name="neck_pitch_joint" type="revolute">
     <origin xyz="-0.0939999999999997 -1.5911115898279495e-16 0.3304999999999986" rpy="1.4266365866433113e-14 1.1313955190051007e-15 4.4868448346273745e-15"/>
-    <axis xyz="-1.1561757607518887e-15 -1 5.551115123110952e-17"/>
+    <axis xyz="1.1561757607518887e-15 1 -5.551115123110952e-17"/>
     <parent link="chest_link"/>
     <child link="neck_link"/>
     <limit lower="-0.5235987755982988" upper="0.8726646259971648" effort="1e+9" velocity="1e+9"/>
