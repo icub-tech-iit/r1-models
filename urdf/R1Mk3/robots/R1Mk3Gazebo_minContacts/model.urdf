@@ -24,8 +24,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_mob_base_body.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="mobile_base_l_wheel_joint" type="revolute">
@@ -114,8 +117,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_slider_eq.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_roll_eq_joint" type="revolute">
@@ -144,8 +150,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_pin_eq.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_pitch_eq_joint" type="revolute">
@@ -174,8 +183,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_torso_platform.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_yaw_joint" type="revolute">
@@ -204,8 +216,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_chest.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="neck_pitch_joint" type="revolute">
@@ -234,8 +249,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_cer_emorph_neck.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_shoulder_pitch" type="revolute">
@@ -264,8 +282,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_shoulder_pitch" type="revolute">
@@ -294,8 +315,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_shoulder_roll" type="revolute">
@@ -324,8 +348,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_arm_ft_sensor" type="fixed">
@@ -351,8 +378,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_shoulder_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_shoulder_yaw" type="revolute">
@@ -381,8 +411,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_upperarm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_elbow" type="revolute">
@@ -411,8 +444,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_forearm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_wrist_yaw" type="revolute">
@@ -441,8 +477,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_wrist_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_wrist_roll" type="revolute">
@@ -471,8 +510,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_wrist_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_wrist_pitch" type="revolute">
@@ -501,8 +543,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_palm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_index_add" type="revolute">
@@ -531,8 +576,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
@@ -561,8 +609,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
@@ -591,8 +642,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
@@ -621,8 +675,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_thumb_add" type="revolute">
@@ -651,8 +708,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
@@ -681,8 +741,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
@@ -711,8 +774,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
@@ -741,8 +807,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
@@ -771,8 +840,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
@@ -801,8 +873,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
@@ -831,8 +906,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
@@ -861,8 +939,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_r_hand_index_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_shoulder_roll" type="revolute">
@@ -891,8 +972,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_arm_ft_sensor" type="fixed">
@@ -918,8 +1002,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_shoulder_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_shoulder_yaw" type="revolute">
@@ -948,8 +1035,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_upperarm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_elbow" type="revolute">
@@ -978,8 +1068,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_forearm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_wrist_yaw" type="revolute">
@@ -1008,8 +1101,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_wrist_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_wrist_roll" type="revolute">
@@ -1038,8 +1134,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_wrist_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_wrist_pitch" type="revolute">
@@ -1068,8 +1167,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_palm.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_index_add" type="revolute">
@@ -1098,8 +1200,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
@@ -1128,8 +1233,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
@@ -1158,8 +1266,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
@@ -1188,8 +1299,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
@@ -1218,8 +1332,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
@@ -1248,8 +1365,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
@@ -1278,8 +1398,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
@@ -1308,8 +1431,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
@@ -1338,8 +1464,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
@@ -1368,8 +1497,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
@@ -1398,8 +1530,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
@@ -1428,8 +1563,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_emorph_l_hand_index_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="neck_yaw_joint" type="revolute">
@@ -1458,8 +1596,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://R1Mk3/meshes/simmechanics/sim_cer_emorph_head.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <link name="l_arm_ft"/>
