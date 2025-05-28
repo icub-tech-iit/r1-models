@@ -1,7 +1,4 @@
 assignedCollisionGeometry:
-  - linkName: mobile_base_body_link
-    geometricShape:
-      shape: empty
   - linkName: torso_slider_eq_link
     geometricShape:
       shape: empty
