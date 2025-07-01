@@ -838,6 +838,18 @@ assignedCollisionGeometry:
 
 XMLBlobs:
     - |
+            <gazebo reference="r_arm_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="l_arm_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
             <gazebo>
             <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
               <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
