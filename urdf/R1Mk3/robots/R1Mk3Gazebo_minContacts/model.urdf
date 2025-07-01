@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
 <robot name="R1Mk3">
-  <link name="base_link"/>
-  <joint name="base_link_fixed_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 -0 0"/>
-    <parent link="base_link"/>
-    <child link="mobile_base_body_link"/>
-  </joint>
   <link name="mobile_base_body_link">
     <inertial>
       <mass value="22.387788717205595"/>
@@ -1609,6 +1603,12 @@
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_9"/>
   </joint>
+  <link name="base_link"/>
+  <joint name="base_link_fixed_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="base_link"/>
+  </joint>
   <link name="mobile_base_lidar"/>
   <joint name="mobile_base_lidar_fixed_joint" type="fixed">
     <origin xyz="0.07 0 0.031" rpy="0 -0 0"/>
@@ -1981,6 +1981,154 @@
     <parent link="torso_platform_link"/>
     <child link="torso_tripod_root"/>
   </joint>
+  <gazebo reference="l_arm_ft_sensor">
+    <sensor name="l_arm_ft" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>-2.15106e-16 0 0 3.14159 -2.54805e-16 -1.5708 </pose>
+      <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="l_arm_ft" type="force_torque">
+    <parent joint="l_arm_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="3.14159 -2.54805e-16 -1.5708 " xyz="-2.15106e-16 0 0"/>
+  </sensor>
+  <gazebo reference="r_arm_ft_sensor">
+    <sensor name="r_arm_ft" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>0 0 0 -3.14159 -2.20185e-17 1.5708 </pose>
+      <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="r_arm_ft" type="force_torque">
+    <parent joint="r_arm_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="-3.14159 -2.20185e-17 1.5708 " xyz="0 0 0"/>
+  </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser" type="ray">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>0.07 0 0.031 0 -0 0 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>5.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+      <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser" type="ray">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
+  </sensor>
+  <gazebo reference="head_link">
+    <sensor name="realsense_depth" type="depth">
+      <always_on>1</always_on>
+      <update_rate>30.000000</update_rate>
+      <pose>0.0513268 0.0444871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
+      <camera name="realsense_depth">
+        <pose frame="">0 0 0 -1.57079 -1.57079 3.14159</pose>
+        <horizontal_fov>1.02259</horizontal_fov>
+        <distortion>
+          <k1>0</k1>
+          <k2>0</k2>
+          <k3>0</k3>
+          <p1>0</p1>
+          <p2>0</p2>
+          <center>319.5 239.5</center>
+        </distortion>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>3000</far>
+        </clip>
+      </camera>
+      <plugin filename="libgazebo_yarp_depthCamera.so" name="depth_camera_plugin">
+        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_rgbd_camera.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="realsense_depth" type="depth">
+    <parent link="head_link"/>
+    <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0444871 0.0537548"/>
+  </sensor>
+  <gazebo reference="head_link">
+    <sensor name="realsense_rgb" type="camera">
+      <always_on>1</always_on>
+      <update_rate>30.000000</update_rate>
+      <pose>0.0513268 0.0184871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
+      <camera name="realsense_rgb">
+        <pose frame="">0 0 0 -1.57079 -1.57079 3.14159</pose>
+        <horizontal_fov>1.02259</horizontal_fov>
+        <distortion>
+          <k1>0</k1>
+          <k2>0</k2>
+          <k3>0</k3>
+          <p1>0</p1>
+          <p2>0</p2>
+          <center>319.5 239.5</center>
+        </distortion>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>3000</far>
+        </clip>
+      </camera>
+      <plugin filename="libgazebo_yarp_camera.so" name="rgb_camera_plugin">
+        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="realsense_rgb" type="camera">
+    <parent link="head_link"/>
+    <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0184871 0.0537548"/>
+  </sensor>
   <gazebo>
     <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
@@ -2239,152 +2387,4 @@
   <gazebo>
     <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
   </gazebo>
-  <gazebo reference="l_arm_ft_sensor">
-    <sensor name="l_arm_ft" type="force_torque">
-      <always_on>1</always_on>
-      <update_rate>100</update_rate>
-      <force_torque>
-        <frame>sensor</frame>
-        <measure_direction>child_to_parent</measure_direction>
-      </force_torque>
-      <pose>-2.15106e-16 0 0 3.14159 -2.54805e-16 -1.5708 </pose>
-      <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="l_arm_ft" type="force_torque">
-    <parent joint="l_arm_ft_sensor"/>
-    <force_torque>
-      <frame>sensor</frame>
-      <measure_direction>child_to_parent</measure_direction>
-    </force_torque>
-    <origin rpy="3.14159 -2.54805e-16 -1.5708 " xyz="-2.15106e-16 0 0"/>
-  </sensor>
-  <gazebo reference="r_arm_ft_sensor">
-    <sensor name="r_arm_ft" type="force_torque">
-      <always_on>1</always_on>
-      <update_rate>100</update_rate>
-      <force_torque>
-        <frame>sensor</frame>
-        <measure_direction>child_to_parent</measure_direction>
-      </force_torque>
-      <pose>0 0 0 -3.14159 -2.20185e-17 1.5708 </pose>
-      <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="r_arm_ft" type="force_torque">
-    <parent joint="r_arm_ft_sensor"/>
-    <force_torque>
-      <frame>sensor</frame>
-      <measure_direction>child_to_parent</measure_direction>
-    </force_torque>
-    <origin rpy="-3.14159 -2.20185e-17 1.5708 " xyz="0 0 0"/>
-  </sensor>
-  <gazebo reference="mobile_base_body_link">
-    <sensor name="base_laser" type="ray">
-      <always_on>1</always_on>
-      <update_rate>40.000000</update_rate>
-      <pose>0.07 0 0.031 0 -0 0 </pose>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>360</samples>
-            <resolution>1</resolution>
-            <min_angle>-3.14</min_angle>
-            <max_angle>3.14</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.10</min>
-          <max>5.0</max>
-          <resolution>0.01</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.005</stddev>
-        </noise>
-      </ray>
-      <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="base_laser" type="ray">
-    <parent link="mobile_base_body_link"/>
-    <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
-  </sensor>
-  <gazebo reference="head_link">
-    <sensor name="realsense_depth" type="depth">
-      <always_on>1</always_on>
-      <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0444871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
-      <camera name="realsense_depth">
-        <pose frame="">0 0 0 -1.57079 -1.57079 3.14159</pose>
-        <horizontal_fov>1.02259</horizontal_fov>
-        <distortion>
-          <k1>0</k1>
-          <k2>0</k2>
-          <k3>0</k3>
-          <p1>0</p1>
-          <p2>0</p2>
-          <center>319.5 239.5</center>
-        </distortion>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>3000</far>
-        </clip>
-      </camera>
-      <plugin filename="libgazebo_yarp_depthCamera.so" name="depth_camera_plugin">
-        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_rgbd_camera.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="realsense_depth" type="depth">
-    <parent link="head_link"/>
-    <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0444871 0.0537548"/>
-  </sensor>
-  <gazebo reference="head_link">
-    <sensor name="realsense_rgb" type="camera">
-      <always_on>1</always_on>
-      <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0184871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
-      <camera name="realsense_rgb">
-        <pose frame="">0 0 0 -1.57079 -1.57079 3.14159</pose>
-        <horizontal_fov>1.02259</horizontal_fov>
-        <distortion>
-          <k1>0</k1>
-          <k2>0</k2>
-          <k3>0</k3>
-          <p1>0</p1>
-          <p2>0</p2>
-          <center>319.5 239.5</center>
-        </distortion>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>3000</far>
-        </clip>
-      </camera>
-      <plugin filename="libgazebo_yarp_camera.so" name="rgb_camera_plugin">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="realsense_rgb" type="camera">
-    <parent link="head_link"/>
-    <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0184871 0.0537548"/>
-  </sensor>
 </robot>
