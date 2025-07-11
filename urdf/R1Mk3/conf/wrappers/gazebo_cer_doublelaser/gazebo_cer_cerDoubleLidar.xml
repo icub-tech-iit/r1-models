@@ -6,7 +6,7 @@
 
     <group name="LASERFRONT-CFG">
         <param name="sensorName">     L_Front    </param>
-        <param name="pose">        10.070 0.0 10.031 0.0          </param>
+        <param name="pose">        0.070 0.0 0.031 0.0          </param>
         <!-- <param name="file">        ../../gazebo_cer_lasersensor_front.ini         </param> -->
     </group>
     <group name="LASERBACK-CFG">
