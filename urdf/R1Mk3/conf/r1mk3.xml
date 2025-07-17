@@ -24,15 +24,11 @@
     <!-- ROS2  -->
     <xi:include href="wrappers/motorControl/alljoints_remapper.xml" />
     <xi:include href="wrappers/motorControl/alljoints_ros2_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/alljoints_yarp_wrapper.xml" />
 
     <!-- SENSORS -->
     <!-- <xi:include href="wrappers/sensors/lidar_wrapper.xml" /> -->
     <xi:include href="wrappers/sensors/rgbd_camera_wrapper.xml" />
-
-    <!-- odometry -->
-    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry.xml" />
-    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_ros2.xml" />
-    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_yarp.xml" />
 
     <!-- lidars -->
     <xi:include href="wrappers/sensors/gazebo_cer_lasersensor_back_nws_yarp.xml" />
