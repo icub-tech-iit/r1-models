@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 
 project(r1-models
-        VERSION 1.0.0)
+        VERSION 1.0.1)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
@@ -25,3 +25,4 @@ if (BUILD_TESTING)
   enable_testing()
   add_subdirectory(tests)
 endif()
+
