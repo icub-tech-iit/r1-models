@@ -23,7 +23,8 @@
     <xi:include href="wrappers/FT/right_arm-FT_wrapper.xml" />
 
     <!-- SENSORS -->
-    <xi:include href="wrappers/sensors/lidar_wrapper.xml" />
+    <xi:include href="wrappers/sensors/lidar_back_wrapper.xml" />
+    <xi:include href="wrappers/sensors/lidar_front_wrapper.xml" />
 
     </devices>
 </robot>
