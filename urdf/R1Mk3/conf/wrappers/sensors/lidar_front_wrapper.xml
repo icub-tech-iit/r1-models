@@ -2,7 +2,7 @@
 <!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
 
 
-<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapY" type="rangefinder2D_nws_yarp">
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapY_F" type="rangefinder2D_nws_yarp">
     <param name="period"> 0.01 </param>
     <param name="name">   ${portprefix}/laser/front:o    </param>
     <action phase="startup" level="5" type="attach">
