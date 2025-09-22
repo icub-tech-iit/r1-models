@@ -711,7 +711,7 @@ sensors:
                  </scan>
                  <range>
                   <min>0.10</min>
-                  <max>5.0</max>
+                  <max>20.0</max>
                   <resolution>0.01</resolution>
                  </range>
                  <noise>
