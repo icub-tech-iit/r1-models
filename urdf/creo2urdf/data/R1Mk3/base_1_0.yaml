@@ -117,6 +117,15 @@ rename:
 exportAllUseradded: No
 
 exportedFrames:
+  - frameName: SCSYS_MOBILE_BASE_LIDAR_F
+    frameReferenceLink: mobile_base_body_link
+    exportedFrameName: mobile_base_lidar_F
+  - frameName: SCSYS_MOBILE_BASE_LIDAR_B
+    frameReferenceLink: mobile_base_body_link
+    exportedFrameName: mobile_base_lidar_B
+  - frameName: MOBILE_BASE_DOUBLE_LIDAR
+    frameReferenceLink: mobile_base_body_link
+    exportedFrameName: mobile_base_double_lidar
   - frameName: SCSYS_TORSO_TRIPOD_PLATFORM_X_B
     frameReferenceLink: torso_platform_link
     exportedFrameName: torso_tripod_root
@@ -126,9 +135,6 @@ exportedFrames:
   - frameName: SCSYS_MOBILE_BASE_BODY
     frameReferenceLink: mobile_base_body_link
     exportedFrameName: base_link
-  - frameName: SCSYS_MOBILE_BASE_LIDAR
-    frameReferenceLink: mobile_base_body_link
-    exportedFrameName: mobile_base_lidar
   - frameName: SCSYS_HEAD_ASUS_XTION_RGB
     frameReferenceLink: head_link
     exportedFrameName: depth_rgb
@@ -655,10 +661,10 @@ forceTorqueSensors:
 
 sensors:
   - linkName: mobile_base_body_link
-    frameName: SCSYS_MOBILE_BASE_LIDAR
-    sensorName: "base_laser"
+    frameName: SCSYS_MOBILE_BASE_LIDAR_F
+    sensorName: "base_laser_front"
     exportFrameInURDF: No
-    sensorType: "ray"
+    sensorType: "gpu_lidar"
     updateRate: 40
     sensorBlobs:
     - |
@@ -684,7 +690,39 @@ sensors:
                 </ray>
     - |
                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
+                </plugin>
+  - linkName: mobile_base_body_link
+    frameName: SCSYS_MOBILE_BASE_LIDAR_B
+    sensorName: "base_laser_back"
+    exportFrameInURDF: No
+    sensorType: "gpu_lidar"
+    updateRate: 40
+    sensorBlobs:
+    - |
+                <ray>
+                 <scan>
+                  <horizontal>
+                   <samples>1600</samples>
+                   <resolution>1</resolution>
+                   <min_angle>0</min_angle>
+                   <max_angle>6.28</max_angle>
+                  </horizontal>
+                 </scan>
+                 <range>
+                  <min>0.10</min>
+                  <max>20.0</max>
+                  <resolution>0.01</resolution>
+                 </range>
+                 <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.005</stddev>
+                 </noise>
+                </ray>
+    - |
+                <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
+                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
                 </plugin>
 #   # TODO But multicamera actually exists??
 #   # - linkName: head_link
@@ -998,7 +1036,13 @@ XMLBlobs:
     - |
             <gazebo>
               <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
               </plugin>
             </gazebo>
     - |
@@ -1024,6 +1068,26 @@ XMLBlobs:
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
                 <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
               </plugin>
+            </gazebo>
+
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"></plugin>
+            </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+            </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
             </gazebo>
 
     - |

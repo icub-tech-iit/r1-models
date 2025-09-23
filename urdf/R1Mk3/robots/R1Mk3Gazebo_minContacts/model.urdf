@@ -2,9 +2,9 @@
 <robot name="R1Mk3">
   <link name="mobile_base_body_link">
     <inertial>
-      <mass value="22.387788717205595"/>
-      <origin xyz="0.0035319256128036637 0 0.0628037627489639" rpy="0 -0 0"/>
-      <inertia ixx="0.5475446262144261" ixy="0" ixz="-0.06348414627429329" iyy="0.5797524718439273" iyz="0" izz="0.270222711489103"/>
+      <mass value="22.38733831972927"/>
+      <origin xyz="0.004531530382432036 0 0.06342751366445423" rpy="0 -0 0"/>
+      <inertia ixx="0.555440058441419" ixy="0" ixz="-0.0640008025738856" iyy="0.5868785916369081" iyz="0" izz="0.2693721028680779"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -515,8 +515,8 @@
     </visual>
   </link>
   <joint name="r_thumb_add" type="revolute">
-    <origin xyz="0.023374863256390613 0.003000000000000197 -0.03452383847355428" rpy="1.7024696942186454e-15 -0.2268928027592651 -6.747454081634266e-16"/>
-    <axis xyz="9.71445146547012e-16 2.542554010709041e-15 0.9999999999999998"/>
+    <origin xyz="0.0233748632563905 0.0030000000000003912 -0.03452383847355461" rpy="1.673677624598278e-15 -0.22689280275926468 -4.805912162985855e-17"/>
+    <axis xyz="4.996003610813204e-16 2.6775506528309486e-15 0.9999999999999999"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_thumb_1"/>
     <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
@@ -539,8 +539,8 @@
     </visual>
   </link>
   <joint name="r_thumb_prox" type="revolute">
-    <origin xyz="0.038074654499560476 0.00346910958032548 -0.0036017448035497446" rpy="-1.7697290685226967 -0.1374915277173128 -2.9653796139720434"/>
-    <axis xyz="1.0928757898653885e-15 -1.0824674490095276e-15 -0.9999999999999997"/>
+    <origin xyz="0.03807465449956053 0.0034691095803252026 -0.0036017448035498" rpy="1.4305744121375041 0.1970305979589347 -1.4222071875351316"/>
+    <axis xyz="-1.0000000000000009 -1.426636586643326e-14 2.5500435096859064e-15"/>
     <parent link="r_hand_thumb_1"/>
     <child link="r_hand_thumb_2"/>
     <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
@@ -548,8 +548,8 @@
   </joint>
   <link name="r_hand_thumb_2">
     <inertial>
-      <mass value="0.00669603218404702"/>
-      <origin xyz="-0.014887264468035837 -0.0011329726380328586 6.26600593671145e-5" rpy="0 -0 0"/>
+      <mass value="0.00744305878263309"/>
+      <origin xyz="1.1691406974989604e-5 3.0451621296398446e-4 -0.014894613060785539" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -563,8 +563,8 @@
     </visual>
   </link>
   <joint name="r_thumb_dist" type="revolute">
-    <origin xyz="-0.03499999999999995 0.0014999999999998903 -1.942890293094024e-16" rpy="-3.1398494915180213e-16 -2.7755575615628914e-16 3.141592653588312"/>
-    <axis xyz="8.8297424927092e-16 1.174407793238017e-15 -0.9999999999999998"/>
+    <origin xyz="-5.551115123125783e-17 -0.003710625528295264 -0.03483505788984388" rpy="-0.0632887739526204 3.164135620181696e-15 1.4696577288475478e-14"/>
+    <axis xyz="-1.0000000000000022 -2.8857703148647843e-14 2.7310966301870412e-16"/>
     <parent link="r_hand_thumb_2"/>
     <child link="r_hand_thumb_3"/>
     <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
@@ -572,8 +572,8 @@
   </joint>
   <link name="r_hand_thumb_3">
     <inertial>
-      <mass value="0.00683159462238797"/>
-      <origin xyz="0.016086236544425966 0.0026526877650291103 4.703179416121195e-5" rpy="0 -0 0"/>
+      <mass value="0.008481423658381124"/>
+      <origin xyz="-2.8601851543103015e-5 0.002737889256839321 -0.016935937291633126" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -968,8 +968,8 @@
     </visual>
   </link>
   <joint name="l_thumb_add" type="revolute">
-    <origin xyz="0.023374863256390772 -0.0030000000000001414 -0.034523838473554724" rpy="-0.04044970061859073 0.2233191863655339 2.9608435412698353"/>
-    <axis xyz="-2.7755575615628914e-16 7.008282842946301e-16 -0.9999999999999999"/>
+    <origin xyz="0.023374863256390335 -0.0029999999999996696 -0.034523838473555835" rpy="-0.040449700618591246 0.22331918636553127 2.960843541269833"/>
+    <axis xyz="-2.831068712794149e-15 6.453171330633722e-16 -1"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_thumb_1"/>
     <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
@@ -992,8 +992,8 @@
     </visual>
   </link>
   <joint name="l_thumb_prox" type="revolute">
-    <origin xyz="-0.03809319744959137 -0.0032591938585578573 -0.0036017448035498" rpy="1.3718635850670964 0.1374915277173127 -3.141592653589793"/>
-    <axis xyz="5.100087019371813e-16 3.164135620181696e-15 -0.9999999999999997"/>
+    <origin xyz="-0.03809319745034652 -0.0032591938585445623 -0.0036017448037202193" rpy="1.430574412172528 -0.1970305979994932 1.5984202269739927"/>
+    <axis xyz="-0.9999999999999998 1.5642875883514762e-11 1.7937541035850657e-10"/>
     <parent link="l_hand_thumb_1"/>
     <child link="l_hand_thumb_2"/>
     <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
@@ -1001,8 +1001,8 @@
   </joint>
   <link name="l_hand_thumb_2">
     <inertial>
-      <mass value="0.00669603218404702"/>
-      <origin xyz="0.014887264468035857 0.0011329726380328031 6.266005936719776e-5" rpy="0 -0 0"/>
+      <mass value="0.00744305878263309"/>
+      <origin xyz="1.1691393252494242e-5 3.0451625727886955e-4 -0.014894613059881514" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -1016,8 +1016,8 @@
     </visual>
   </link>
   <joint name="l_thumb_dist" type="revolute">
-    <origin xyz="0.03499999999999995 -0.0014999999999998903 -5.551115123125783e-17" rpy="-4.761815941556338e-16 -2.498001805406602e-16 -1.4810340454030065e-12"/>
-    <axis xyz="-2.102484852883521e-15 2.263814136122298e-16 -0.9999999999999993"/>
+    <origin xyz="5.551115123125783e-17 -0.0037106254246526693 -0.034835057900884356" rpy="-0.0632887709773814 1.1102230246251565e-16 2.6684383869213243e-15"/>
+    <axis xyz="-0.9999999999999997 4.263839635442148e-12 1.8000612565858527e-10"/>
     <parent link="l_hand_thumb_2"/>
     <child link="l_hand_thumb_3"/>
     <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
@@ -1025,8 +1025,8 @@
   </joint>
   <link name="l_hand_thumb_3">
     <inertial>
-      <mass value="0.006831595"/>
-      <origin xyz="0.016086252532748233 0.0026526887310780456 4.701425890352162e-5" rpy="0 -0 0"/>
+      <mass value="0.00839103052424309"/>
+      <origin xyz="-2.8909987974501394e-5 0.0027777675147018788 -0.016956792352400222" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -1194,6 +1194,12 @@
     <origin xyz="-0.0068499999999994746 -0.015000000000000041 -0.08429999999999993" rpy="-3.1415926535897865 1.4451318944920141e-16 1.5707963267948946"/>
     <parent link="r_shoulder_2"/>
     <child link="r_arm_ft"/>
+  </joint>
+  <link name="mobile_base_double_lidar"/>
+  <joint name="mobile_base_double_lidar_fixed_joint" type="fixed">
+    <origin xyz="0 0 0.031" rpy="0 -0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_double_lidar"/>
   </joint>
   <link name="torso"/>
   <joint name="torso_fixed_joint" type="fixed">
@@ -1533,73 +1539,73 @@
   </joint>
   <link name="l_hand_thumb_skin_0"/>
   <joint name="l_hand_thumb_skin_0_fixed_joint" type="fixed">
-    <origin xyz="0.026405457778888957 -0.002433918058236617 5.551115123125783e-17" rpy="-1.5707963267948963 1.1102230246251565e-16 2.793301925464017"/>
+    <origin xyz="-2.2125551391027898e-11 -0.002433587294553452 -0.026405457778888853" rpy="-1.1609482034540493e-11 -1.2225055986691151 1.5707963268683354"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_0"/>
   </joint>
   <link name="l_hand_thumb_skin_1"/>
   <joint name="l_hand_thumb_skin_1_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286963 -0.0031311476143920103 0.0033000000000000806" rpy="-1.5707963267948961 -7.216449660063518e-16 -2.1816615649914324"/>
+    <origin xyz="0.003299999977533996 -0.0031308168507229173 -0.028280418005880898" rpy="3.141592653571252 -0.6108652381980162 -1.570796327023918"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_1"/>
   </joint>
   <link name="l_hand_thumb_skin_10"/>
   <joint name="l_hand_thumb_skin_10_fixed_joint" type="fixed">
-    <origin xyz="0.032766684597958076 -0.004081940988398508 -0.0032999999999999696" rpy="-1.5707963267948961 -5.551115123125783e-17 -3.075707298047779"/>
+    <origin xyz="-0.003300000023277627 -0.004081610224701271 -0.03276668459736391" rpy="3.1415926535743104 -1.5049109712528579 -1.5707963267955443"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_10"/>
   </joint>
   <link name="l_hand_thumb_skin_11"/>
   <joint name="l_hand_thumb_skin_11_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286963 -0.0031311476143919825 -0.0032999999999999696" rpy="-1.5707963267948961 -0 2.790891229256258"/>
+    <origin xyz="-0.003300000022465971 -0.0031308168506947176 -0.02828041800469284" rpy="-1.1627790682026587e-11 -1.220094902461357 1.5707963268688572"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_11"/>
   </joint>
   <link name="l_hand_thumb_skin_2"/>
   <joint name="l_hand_thumb_skin_2_fixed_joint" type="fixed">
-    <origin xyz="0.030192049408458998 -0.0037582416535800467 0" rpy="-1.5707963267948961 -0 2.8764776596464054"/>
+    <origin xyz="-2.2812751687695254e-11 -0.0037579108898968816 -0.030192049408458887" rpy="-1.0975528579504133e-11 -1.305681332851502 1.5707963268508718"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_2"/>
   </joint>
   <link name="l_hand_thumb_skin_3"/>
   <joint name="l_hand_thumb_skin_3_fixed_joint" type="fixed">
-    <origin xyz="0.03276668459795809 -0.004081940988398536 0.003300000000000025" rpy="-1.5707963267948961 -7.216449660063518e-16 -2.1816615649914324"/>
+    <origin xyz="0.0032999999767223676 -0.004081610224729415 -0.03276668459855195" rpy="3.141592653571252 -0.6108652381980161 -1.570796327023918"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_3"/>
   </joint>
   <link name="l_hand_thumb_skin_4"/>
   <joint name="l_hand_thumb_skin_4_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000006 -0.0011923206886612636 0.005929525942276415" rpy="-3.1415926535897927 3.3306690738754696e-16 -3.1415926535883125"/>
+    <origin xyz="0.005929525918969086 -0.0011919899250033839 -0.03300000000106727" rpy="1.570796323948815 -1.507507555817487 -1.5707963239587988"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_4"/>
   </joint>
   <link name="l_hand_thumb_skin_5"/>
   <joint name="l_hand_thumb_skin_5_fixed_joint" type="fixed">
-    <origin xyz="0.034821366118633415 -0.0034840921633512156 8.326672684688674e-17" rpy="-1.5707963267948963 -2.220446049250313e-16 -2.6595476565932565"/>
+    <origin xyz="-2.364491935580304e-11 -0.0034837613996680783 -0.034821366118633304" rpy="3.141592653576766 -1.0887513297983578 -1.57079632687865"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_5"/>
   </joint>
   <link name="l_hand_thumb_skin_6"/>
   <joint name="l_hand_thumb_skin_6_fixed_joint" type="fixed">
-    <origin xyz="0.036769634404151985 -0.0018288017188734795 0.003300000000000053" rpy="1.5707963267948968 -2.7755575615628914e-16 -2.399827721490722"/>
+    <origin xyz="0.0032999999760114918 -0.0018284709552043588 -0.03676963440474591" rpy="-4.620360040236946e-16 -0.7657426237199224 -1.5707963267949006"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_6"/>
   </joint>
   <link name="l_hand_thumb_skin_7"/>
   <joint name="l_hand_thumb_skin_7_fixed_joint" type="fixed">
-    <origin xyz="0.03825964091188104 -2.9018466437893964e-4 0" rpy="-1.570554204626614 -3.384708831138008e-4 -2.1917443860728234"/>
+    <origin xyz="-2.4250157437677444e-11 -2.898539006957468e-4 -0.038259640911880916" rpy="-3.1415628662062685 -0.620948017682013 -1.5704313693095489"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_7"/>
   </joint>
   <link name="l_hand_thumb_skin_8"/>
   <joint name="l_hand_thumb_skin_8_fixed_joint" type="fixed">
-    <origin xyz="0.03676963440415201 -0.001828801718873424 -0.003299999999999942" rpy="-2.3592109405351698 0.6231239758157896 -2.6159603834403367"/>
+    <origin xyz="-0.0033000000239885308 -0.0018284709551761869 -0.036769634403557905" rpy="3.071469777395219 -0.7763161157147594 -2.432155397543958"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_8"/>
   </joint>
   <link name="l_hand_thumb_skin_9"/>
   <joint name="l_hand_thumb_skin_9_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000007 -0.0011923206886612636 -0.005929525942276359" rpy="-2.7645689049691455 0.25312544974719003 -3.042753660865159"/>
+    <origin xyz="-0.005929525965583604 -0.0011919899249527854 -0.032999999998932564" rpy="2.9258803345668243 -1.2928372761145006 -2.5531132071417293"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_9"/>
   </joint>
@@ -1609,11 +1615,17 @@
     <parent link="mobile_base_body_link"/>
     <child link="base_link"/>
   </joint>
-  <link name="mobile_base_lidar"/>
-  <joint name="mobile_base_lidar_fixed_joint" type="fixed">
+  <link name="mobile_base_lidar_B"/>
+  <joint name="mobile_base_lidar_B_fixed_joint" type="fixed">
+    <origin xyz="-0.085 0 0.031" rpy="0 -0 3.141592653589793"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_lidar_B"/>
+  </joint>
+  <link name="mobile_base_lidar_F"/>
+  <joint name="mobile_base_lidar_F_fixed_joint" type="fixed">
     <origin xyz="0.07 0 0.031" rpy="0 -0 0"/>
     <parent link="mobile_base_body_link"/>
-    <child link="mobile_base_lidar"/>
+    <child link="mobile_base_lidar_F"/>
   </joint>
   <link name="r_hand_index_skin_0"/>
   <joint name="r_hand_index_skin_0_fixed_joint" type="fixed">
@@ -1905,73 +1917,73 @@
   </joint>
   <link name="r_hand_thumb_skin_0"/>
   <joint name="r_hand_thumb_skin_0_fixed_joint" type="fixed">
-    <origin xyz="0.02640545777888894 -0.002433918058236617 0" rpy="-1.5707963267948961 2.220446049250313e-16 2.793301925464017"/>
+    <origin xyz="-5.551115123125783e-17 -0.002433587294553591 -0.026405457778889127" rpy="2.765053092553465e-15 -1.22250559866914 1.5707963267948857"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_0"/>
   </joint>
   <link name="r_hand_thumb_skin_1"/>
   <joint name="r_hand_thumb_skin_1_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286932 -0.0031311476143919825 0.003300000000000025" rpy="-1.570796326794896 -7.216449660063518e-16 -2.1816615649914324"/>
+    <origin xyz="0.0032999999999999696 -0.0031308168507089285 -0.02828041800528714" rpy="3.1415926535897922 -0.6108652381980179 -1.5707963267949114"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_1"/>
   </joint>
   <link name="r_hand_thumb_skin_10"/>
   <joint name="r_hand_thumb_skin_10_fixed_joint" type="fixed">
-    <origin xyz="0.03276668459795807 -0.00408194098839848 -0.003300000000000025" rpy="-1.5707963267948961 5.551115123125783e-17 -3.075707298047779"/>
+    <origin xyz="-0.003300000000000053 -0.004081610224715565 -0.032766684597958284" rpy="3.141592653589779 -1.5049109712529725 -1.570796326794926"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_10"/>
   </joint>
   <link name="r_hand_thumb_skin_11"/>
   <joint name="r_hand_thumb_skin_11_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286953 -0.0031311476143919825 -0.0032999999999999974" rpy="-1.5707963267948961 1.6653345369377348e-16 2.790891229256258"/>
+    <origin xyz="-0.003300000000000053 -0.0031308168507090395 -0.02828041800528719" rpy="2.908401871442372e-15 -1.2200949024613812 1.5707963267948855"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_11"/>
   </joint>
   <link name="r_hand_thumb_skin_2"/>
   <joint name="r_hand_thumb_skin_2_fixed_joint" type="fixed">
-    <origin xyz="0.030192049408458994 -0.003758241653580019 0" rpy="-1.5707963267948961 2.7755575615628914e-16 2.8764776596464054"/>
+    <origin xyz="0 -0.0037579108898970204 -0.03019204940845916" rpy="3.389732024708853e-15 -1.3056813328515338 1.5707963267948863"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_2"/>
   </joint>
   <link name="r_hand_thumb_skin_3"/>
   <joint name="r_hand_thumb_skin_3_fixed_joint" type="fixed">
-    <origin xyz="0.03276668459795803 -0.004081940988398508 0.0032999999999999974" rpy="-1.570796326794896 -8.326672684688674e-16 -2.1816615649914324"/>
+    <origin xyz="0.0032999999999999974 -0.004081610224715454 -0.032766684597958305" rpy="3.1415926535897922 -0.6108652381980177 -1.5707963267949112"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_3"/>
   </joint>
   <link name="r_hand_thumb_skin_4"/>
   <joint name="r_hand_thumb_skin_4_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000006 -0.0011923206886612636 0.005929525942276415" rpy="-3.1415926535897927 2.220446049250313e-16 -3.1415926535883125"/>
+    <origin xyz="0.005929525942276387 -0.0011919899249781263 -0.03300000000000026" rpy="1.5707963267948817 -1.507507552842365 -1.5707963267949265"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_4"/>
   </joint>
   <link name="r_hand_thumb_skin_5"/>
   <joint name="r_hand_thumb_skin_5_fixed_joint" type="fixed">
-    <origin xyz="0.03482136611863341 -0.0034840921633512434 0" rpy="-1.5707963267948961 -1.6653345369377348e-16 -2.659547656593256"/>
+    <origin xyz="-5.551115123125783e-17 -0.003483761399668245 -0.034821366118633644" rpy="3.1415926535897913 -1.088751329798369 -1.5707963267949128"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_5"/>
   </joint>
   <link name="r_hand_thumb_skin_6"/>
   <joint name="r_hand_thumb_skin_6_fixed_joint" type="fixed">
-    <origin xyz="0.036769634404151964 -0.0018288017188734518 0.0032999999999999974" rpy="1.570796326794897 -2.220446049250313e-16 -2.399827721490722"/>
+    <origin xyz="0.0032999999999999974 -0.0018284709551903977 -0.036769634404152235" rpy="-1.3861080081060772e-15 -0.7657426207446857 -1.5707963267949117"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_6"/>
   </joint>
   <link name="r_hand_thumb_skin_7"/>
   <joint name="r_hand_thumb_skin_7_fixed_joint" type="fixed">
-    <origin xyz="0.03825964091188099 -2.901846643789119e-4 0" rpy="-1.5705542046266139 -3.3847088311368976e-4 -2.191744386072823"/>
+    <origin xyz="-2.7755575615628914e-17 -2.898539006959133e-4 -0.038259640911881256" rpy="-3.1415628661866624 -0.6209480176820894 -1.570431369087355"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_7"/>
   </joint>
   <link name="r_hand_thumb_skin_8"/>
   <joint name="r_hand_thumb_skin_8_fixed_joint" type="fixed">
-    <origin xyz="0.036769634404152 -0.0018288017188734518 -0.003300000000000025" rpy="-2.3592109405351698 0.6231239758157898 -2.6159603834403367"/>
+    <origin xyz="-0.0032999999999999974 -0.0018284709551905087 -0.03676963440415227" rpy="3.071469774250236 -0.7763161153414891 -2.432155392931655"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_8"/>
   </joint>
   <link name="r_hand_thumb_skin_9"/>
   <joint name="r_hand_thumb_skin_9_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000001 -0.0011923206886612636 -0.005929525942276359" rpy="-2.7645689049691455 0.25312544974719 -3.042753660865159"/>
+    <origin xyz="-0.005929525942276387 -0.0011919899249783206 -0.03300000000000024" rpy="2.9258803249384773 -1.2928372753400146 -2.553113197096302"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_9"/>
   </joint>
@@ -2026,7 +2038,7 @@
     <origin rpy="-3.14159 -2.20185e-17 1.5708 " xyz="0 0 0"/>
   </sensor>
   <gazebo reference="mobile_base_body_link">
-    <sensor name="base_laser" type="ray">
+    <sensor name="base_laser_front" type="gpu_lidar">
       <always_on>1</always_on>
       <update_rate>40.000000</update_rate>
       <pose>0.07 0 0.031 0 -0 0 </pose>
@@ -2051,13 +2063,47 @@
         </noise>
       </ray>
       <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
   </gazebo>
-  <sensor name="base_laser" type="ray">
+  <sensor name="base_laser_front" type="gpu_lidar">
     <parent link="mobile_base_body_link"/>
     <origin rpy="0 -0 0 " xyz="0.07 0 0.031"/>
+  </sensor>
+  <gazebo reference="mobile_base_body_link">
+    <sensor name="base_laser_back" type="gpu_lidar">
+      <always_on>1</always_on>
+      <update_rate>40.000000</update_rate>
+      <pose>-0.085 0 0.031 0 -0 3.14159 </pose>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1600</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>6.28</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>20.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+      <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
+        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="base_laser_back" type="gpu_lidar">
+    <parent link="mobile_base_body_link"/>
+    <origin rpy="0 -0 3.14159 " xyz="-0.085 0 0.031"/>
   </sensor>
   <gazebo reference="head_link">
     <sensor name="realsense_depth" type="depth">
@@ -2257,7 +2303,12 @@
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2279,6 +2330,18 @@
     <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
       <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
   </gazebo>
   <gazebo reference="mobile_base_body_link">
     <collision>
