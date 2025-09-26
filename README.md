@@ -45,7 +45,7 @@ export GZ_SIM_RESOURCE_PATH=${GZ_SIM_RESOURCE_PATH}:<install-prefix>/share/R1Mk3
 ## Usage with `gz-sim`
 
 For using the models stored in this repository in `gz-sim`, it is needed a world file that imports these plugins:
-```
+```xml
       <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
       <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
       <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
