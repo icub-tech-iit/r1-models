@@ -2331,18 +2331,6 @@
       <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
   </gazebo>
-  <gazebo>
-    <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
-  </gazebo>
-  <gazebo>
-    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
-  </gazebo>
-  <gazebo>
-    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
-  </gazebo>
-  <gazebo>
-    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
-  </gazebo>
   <gazebo reference="mobile_base_body_link">
     <collision>
       <surface>
