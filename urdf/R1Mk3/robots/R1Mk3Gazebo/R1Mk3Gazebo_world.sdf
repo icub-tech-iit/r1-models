@@ -15,18 +15,10 @@
       filename="gz-sim-user-commands-system"
       name="gz::sim::systems::UserCommands">
     </plugin>
-    <gazebo>
       <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
-    </gazebo>
-    <gazebo>
       <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
-    </gazebo>
-    <gazebo>
       <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
-    </gazebo>
-    <gazebo>
       <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
-    </gazebo>
 
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
