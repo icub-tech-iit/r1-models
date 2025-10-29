@@ -8,17 +8,7 @@ This repository hosts the configuration files for generating R1Mk3 urdf.
 
 Before installing `r1-models`, please be sure that you've installed [`YARP`](https://www.yarp.it/latest//) 3.10.0 or higher on your machine.
 
-### Compiling from source
-
-For installing it just:
-
-```sh
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
-make
-(make install)
-```
+Both in gazebo and gz-sim, these models need that [`cerDoubleLaser`](https://github.com/robotology/cer/tree/master/cermod/cerDoubleLidar) has been installed in the machine.
 
 `R1Mk3` for `Gazebo Classic` simulation model needs a `gazebo-yarp-plugins` [latest master](https://github.com/robotology/gazebo-yarp-plugins/commit/c89280295d53279049bb7521cf6b6b3400130f23).
 
@@ -39,6 +29,19 @@ To use `R1Mk3` models with `gz sim`, instead, you can rely on [gz-sim-yarp-plugi
 
 ```sh
 export GZ_SIM_RESOURCE_PATH=${GZ_SIM_RESOURCE_PATH}:<install-prefix>/share/R1Mk3/robots
+```
+
+
+### Compiling from source
+
+For installing it just:
+
+```sh
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
+make
+(make install)
 ```
 
 
