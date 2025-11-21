@@ -832,6 +832,7 @@ sensors:
 # Workaround options
 reverseRotationAxis:
   torso_roll_eq_joint
+  neck_yaw_joint
   r_shoulder_pitch
   r_shoulder_yaw
   r_shoulder_roll
