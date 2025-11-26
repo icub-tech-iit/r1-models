@@ -20,19 +20,26 @@
 
     <xi:include href="wrappers/motorControl/alljoints_remapper.xml" />
     <xi:include href="wrappers/motorControl/alljoints_ros2_wrapper.xml" enabled_by="enable_ros2" />
+    <xi:include href="wrappers/motorControl/alljoints_yarp_wrapper.xml" />
 
     <!-- FT SENSORS -->
     <xi:include href="wrappers/FT/left_arm-FT_wrapper.xml" />
     <xi:include href="wrappers/FT/right_arm-FT_wrapper.xml" />
 
-    <!-- SENSORS -->
+    <!-- ODOMETRY -->
+    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry.xml" />
+    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_ros2.xml" />
+    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_yarp.xml" />
+
+    <!-- LIDARS -->
     <xi:include href="wrappers/sensors/lidar_back_nws_yarp.xml"    disabled_by="disable_lidar" />
     <xi:include href="wrappers/sensors/lidar_front_nws_yarp.xml"   disabled_by="disable_lidar"/>
-    
+   
     <xi:include href="wrappers/sensors/lidar_double.xml"           disabled_by="disable_lidar"/>
     <xi:include href="wrappers/sensors/lidar_double_nws_yarp.xml"  disabled_by="disable_lidar"/>
     <xi:include href="wrappers/sensors/lidar_double_nws_ros2.xml"  enabled_by="enable_ros2" disabled_by="disable_lidar"/>
 
+   <!-- CAMERA -->
    <!-- <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp.xml" /> -->
 
     </devices>
