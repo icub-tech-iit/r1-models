@@ -28,7 +28,7 @@
 
     <!-- ODOMETRY -->
     <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry.xml" />
-    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_ros2.xml" />
+    <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_ros2.xml" enabled_by="enable_ros2" />
     <xi:include href="gazebo_cer_odometry/gazebo_cer_odometry_nws_yarp.xml" />
 
     <!-- LIDARS -->
