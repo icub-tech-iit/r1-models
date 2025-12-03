@@ -64,7 +64,7 @@
     <include>
       <name>R1</name>
       <uri>model://R1Mk3Gazebo</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.16 0 0 0</pose>
     </include>
 
     <model name="box">

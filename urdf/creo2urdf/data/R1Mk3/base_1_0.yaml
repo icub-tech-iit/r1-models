@@ -877,8 +877,8 @@ assignedCollisionGeometry:
    - linkName: mobile_base_body_link
      geometricShape:
        shape: box
-       size: [0.32, 0.32, 0.32]
-       origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+       size: [0.32, 0.32, 0.08]
+       origin: [0.0,0.0,-0.12,0.0,0.0,0.0]
 
 XMLBlobs:
     - |
