@@ -766,7 +766,7 @@ sensors:
     frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
     sensorName: "realsense_depth"
     exportFrameInURDF: No
-    sensorType: "depth"
+    sensorType: "rgbd_camera"
     updateRate: 30
     sensorBlobs:
     - |
@@ -1061,6 +1061,12 @@ XMLBlobs:
             <gazebo>
               <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
                 <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+                <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
               </plugin>
             </gazebo>
     - |
