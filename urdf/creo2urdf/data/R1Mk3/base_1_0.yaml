@@ -690,7 +690,7 @@ sensors:
                 </ray>
     - |
                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
+                    <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
                 </plugin>
   - linkName: mobile_base_body_link
     frameName: SCSYS_MOBILE_BASE_LIDAR_B
@@ -722,7 +722,7 @@ sensors:
                 </ray>
     - |
                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
+                    <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
                 </plugin>
 #   # TODO But multicamera actually exists??
 #   # - linkName: head_link
@@ -1042,13 +1042,13 @@ XMLBlobs:
     - |
             <gazebo>
               <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
+                <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
               </plugin>
             </gazebo>
     - |
             <gazebo>
               <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
+                <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
               </plugin>
             </gazebo>
     - |
