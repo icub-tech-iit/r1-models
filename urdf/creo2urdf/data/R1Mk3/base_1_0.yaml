@@ -1066,13 +1066,17 @@ XMLBlobs:
     - |
             <gazebo>
               <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-                <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gazebo.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+                <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
               </plugin>
             </gazebo>
     - |
             <gazebo>
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
                 <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+                <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
               </plugin>
             </gazebo>
 

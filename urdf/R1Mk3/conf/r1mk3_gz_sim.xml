@@ -40,7 +40,7 @@
     <xi:include href="wrappers/sensors/lidar_double_nws_ros2.xml"  enabled_by="enable_ros2" disabled_by="disable_lidar"/>
 
    <!-- CAMERA -->
-   <!-- <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp.xml" /> -->
-
+   <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp.xml" />
+ 
     </devices>
 </robot>

@@ -2132,6 +2132,9 @@
         <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_rgbd_camera.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
+    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+      <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+    </plugin>     
   </gazebo>
   <sensor name="realsense_depth" type="depth">
     <parent link="head_link"/>
@@ -2167,6 +2170,9 @@
         <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
+    <plugin name="gzyarp::Camera" filename="gz-sim-yarp-camera-system">
+       <yarpConfigurationString>(yarpDeviceName camera_plugin_device) (parentLinkName head_link) (sensorName realsense_rgb) (display_timestamp) (display_time_box)</yarpConfigurationString>
+    </plugin>
   </gazebo>
   <sensor name="realsense_rgb" type="camera">
     <parent link="head_link"/>
