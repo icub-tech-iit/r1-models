@@ -690,7 +690,7 @@ sensors:
                 </ray>
     - |
                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
+                    <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
                 </plugin>
   - linkName: mobile_base_body_link
     frameName: SCSYS_MOBILE_BASE_LIDAR_B
@@ -722,7 +722,7 @@ sensors:
                 </ray>
     - |
                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-                    <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
+                    <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
                 </plugin>
 #   # TODO But multicamera actually exists??
 #   # - linkName: head_link
@@ -766,7 +766,7 @@ sensors:
     frameName: SCSYS_HEAD_ASUS_XTION_DEPTH
     sensorName: "realsense_depth"
     exportFrameInURDF: No
-    sensorType: "depth"
+    sensorType: "rgbd_camera"
     updateRate: 30
     sensorBlobs:
     - |
@@ -1042,13 +1042,13 @@ XMLBlobs:
     - |
             <gazebo>
               <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
+                <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
               </plugin>
             </gazebo>
     - |
             <gazebo>
               <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-                <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
+                <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
               </plugin>
             </gazebo>
     - |
@@ -1065,14 +1065,24 @@ XMLBlobs:
             </gazebo>
     - |
             <gazebo>
+              <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+                <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
               <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-                <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gazebo.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+                <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
               </plugin>
             </gazebo>
     - |
             <gazebo>
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
                 <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+                <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
               </plugin>
             </gazebo>
 

@@ -2,9 +2,7 @@
 <!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
 
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="cer_odometry_nws_yarp" type="odometry2D_nws_yarp">
-    <param name="odometry_port_name">  /r1mk3Sim/odometry </param>
-    <param name="odometer_port_name">  /r1mk3Sim/odometer </param>
-    <param name="velocity_port_name">  /r1mk3Sim/velocity </param>
+    <param name="name">  ${portprefix}/odom </param>
 
     <action phase="startup" level="10" type="attach">
             <param name="device">  cer_odometry </param>
