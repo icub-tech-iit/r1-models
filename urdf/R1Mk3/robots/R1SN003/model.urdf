@@ -2474,7 +2474,7 @@
         </noise>
       </ray>
       <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
+        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
   </gazebo>
@@ -2508,7 +2508,7 @@
         </noise>
       </ray>
       <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
+        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
   </gazebo>
@@ -2517,7 +2517,7 @@
     <origin rpy="0 -0 3.14159 " xyz="-0.085 0 0.031"/>
   </sensor>
   <gazebo reference="head_link">
-    <sensor name="realsense_depth" type="depth">
+    <sensor name="realsense_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
       <pose>0.0513268 0.0444871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
@@ -2547,7 +2547,7 @@
       </plugin>
     </sensor>
   </gazebo>
-  <sensor name="realsense_depth" type="depth">
+  <sensor name="realsense_depth" type="rgbd_camera">
     <parent link="head_link"/>
     <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0444871 0.0537548"/>
   </sensor>
@@ -2714,12 +2714,12 @@
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_back.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_laser_sensor_front.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2733,13 +2733,22 @@
     </plugin>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+      <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gazebo.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+      <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
       <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
+      <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
     </plugin>
   </gazebo>
   <gazebo reference="mobile_base_body_link">
