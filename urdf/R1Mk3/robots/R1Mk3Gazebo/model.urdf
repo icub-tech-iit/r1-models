@@ -2474,7 +2474,7 @@
         </noise>
       </ray>
       <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
+        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
   </gazebo>
@@ -2508,7 +2508,7 @@
         </noise>
       </ray>
       <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
+        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
   </gazebo>
@@ -2547,7 +2547,7 @@
       </plugin>
     </sensor>
   </gazebo>
-  <sensor name="realsense_depth" type="depth">
+  <sensor name="realsense_depth" type="rgbd_camera">
     <parent link="head_link"/>
     <origin rpy="-1.39626 -1.06329e-17 -1.5708 " xyz="0.0513268 0.0444871 0.0537548"/>
   </sensor>
@@ -2581,9 +2581,6 @@
         <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
-    <plugin name="gzyarp::Camera" filename="gz-sim-yarp-camera-system">
-       <yarpConfigurationString>(yarpDeviceName camera_plugin_device) (parentLinkName head_link) (sensorName realsense_rgb) (display_timestamp) (display_time_box)</yarpConfigurationString>
-    </plugin>
   </gazebo>
   <sensor name="realsense_rgb" type="camera">
     <parent link="head_link"/>
@@ -2739,10 +2736,10 @@
     <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
       <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
     </plugin>
-  </gazebo>  
+  </gazebo>
   <gazebo>
     <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gazebo.xml</yarpRobotInterfaceConfigurationFile>
       <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
       <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
     </plugin>
