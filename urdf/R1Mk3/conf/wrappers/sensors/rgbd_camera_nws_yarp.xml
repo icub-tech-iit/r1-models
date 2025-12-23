@@ -7,7 +7,7 @@
     <param name="name"> ${portprefix}/depthCamera </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
-            <elem name="the_device"> rgbdCamera </elem>
+            <elem name="the_device"> depthcamera_plugin_device </elem>
         </paramlist>
     </action>
     <action phase="shutdown" level="20" type="detach" />
