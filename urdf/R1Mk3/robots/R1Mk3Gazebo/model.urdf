@@ -2413,9 +2413,6 @@
         <measure_direction>child_to_parent</measure_direction>
       </force_torque>
       <pose>-2.15106e-16 0 0 3.14159 -2.54805e-16 -1.5708 </pose>
-      <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_left_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="l_arm_ft" type="force_torque">
@@ -2435,9 +2432,6 @@
         <measure_direction>child_to_parent</measure_direction>
       </force_torque>
       <pose>0 0 0 -3.14159 -2.20185e-17 1.5708 </pose>
-      <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/FT/gazebo_cer_right_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="r_arm_ft" type="force_torque">
@@ -2473,9 +2467,6 @@
           <stddev>0.005</stddev>
         </noise>
       </ray>
-      <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="base_laser_front" type="gpu_lidar">
@@ -2507,9 +2498,6 @@
           <stddev>0.005</stddev>
         </noise>
       </ray>
-      <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="base_laser_back" type="gpu_lidar">
@@ -2542,9 +2530,6 @@
           <far>3000</far>
         </clip>
       </camera>
-      <plugin filename="libgazebo_yarp_depthCamera.so" name="depth_camera_plugin">
-        <yarpConfigurationFile>model://R1Mk3/conf/sensors/gazebo_cer_rgbd_camera.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="realsense_depth" type="rgbd_camera">
@@ -2577,9 +2562,6 @@
           <far>3000</far>
         </clip>
       </camera>
-      <plugin filename="libgazebo_yarp_camera.so" name="rgb_camera_plugin">
-        <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_rgb_camera.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="realsense_rgb" type="camera">
@@ -2597,18 +2579,8 @@
     <disableFixedJointLumping>true</disableFixedJointLumping>
   </gazebo>
   <gazebo>
-    <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_head.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2617,20 +2589,9 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="controlboard_left_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
-    </plugin>
-  </gazebo>
-  <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
       <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_left_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2665,20 +2626,9 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="controlboard_right_arm" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
-      <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
-    </plugin>
-  </gazebo>
-  <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
       <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_right_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
@@ -2723,11 +2673,6 @@
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://R1Mk3/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
@@ -2735,13 +2680,6 @@
   <gazebo>
     <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
       <yarpConfigurationString>(yarpDeviceName depthcamera_plugin_device) (parentLinkName head_link) (sensorName realsense_depth) (display_timestamp) (display_time_box)</yarpConfigurationString>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://R1Mk3/conf/r1mk3_gazebo.xml</yarpRobotInterfaceConfigurationFile>
-      <yarpRobotInterfaceEnableTags>    (enable_ros2)   </yarpRobotInterfaceEnableTags>
-      <yarpRobotInterfaceDisableTags>  </yarpRobotInterfaceDisableTags>
     </plugin>
   </gazebo>
   <gazebo>
