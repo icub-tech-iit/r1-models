@@ -8,18 +8,7 @@ This repository hosts the configuration files for generating R1Mk3 urdf.
 
 Before installing `r1-models`, please be sure that you've installed [`YARP`](https://www.yarp.it/latest//) 3.10.0 or higher on your machine.
 
-Both in gazebo and gz-sim, these models need that [`cerDoubleLaser`](https://github.com/robotology/cer/tree/master/cermod/cerDoubleLidar) has been installed in the machine.
-
-`R1Mk3` for `Gazebo Classic` simulation model needs a `gazebo-yarp-plugins` [latest master](https://github.com/robotology/gazebo-yarp-plugins/commit/c89280295d53279049bb7521cf6b6b3400130f23).
-
-In order to use the model, the following env variables must be configured:
-```sh
-# R1Mk3 model in YARP
-export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/R1Mk3
-# R1Mk3 model in Gazebo
-export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/R1Mk3/robots
-export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/
-```
+These models need that [`cerDoubleLaser`](https://github.com/robotology/cer/tree/master/cermod/cerDoubleLidar) has been installed in the machine.
 
 In order to make the device `couplingXCubHandMk5` detectable, add `<installation_path>/share/yarp` to the `YARP_DATA_DIRS` environment variable of the system.
 
@@ -28,7 +17,17 @@ Alternatively, if `YARP` has been installed using the [robotology-superbuild](ht
 To use `R1Mk3` models with `gz sim`, instead, you can rely on [gz-sim-yarp-plugins](https://github.com/robotology/gz-sim-yarp-plugins?tab=readme-ov-file#installation) and the following env variable mush be configured:
 
 ```sh
+export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/R1Mk3
 export GZ_SIM_RESOURCE_PATH=${GZ_SIM_RESOURCE_PATH}:<install-prefix>/share/R1Mk3/robots
+```
+
+Moreover, in the world these plugins needs to be imported:
+
+```xml
+      <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
+      <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+      <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+      <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
 ```
 
 
@@ -42,17 +41,6 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
 make
 (make install)
-```
-
-
-## Usage with `gz-sim`
-
-For using the models stored in this repository in `gz-sim`, it is needed a world file that imports these plugins:
-```xml
-      <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
-      <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
-      <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
-      <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
 ```
 
 ## URDF generation
