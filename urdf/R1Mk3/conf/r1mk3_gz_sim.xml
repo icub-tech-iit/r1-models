@@ -41,6 +41,8 @@
 
    <!-- CAMERA -->
    <xi:include href="wrappers/sensors/rgbd_camera_nws_yarp.xml" />
+   <xi:include href="wrappers/sensors/rgbd_camera_nws_ros2.xml" />
+
  
     </devices>
 </robot>
