@@ -752,7 +752,7 @@ sensors:
     sensorBlobs:
     - |
                 <camera name='realsense_depth'>
-                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
+                    <pose frame=''>0 0 0 0 0 0</pose>
                     <horizontal_fov>1.02259</horizontal_fov>
                     <distortion>
                         <k1>0</k1>
@@ -782,7 +782,7 @@ sensors:
     sensorBlobs:
     - |
                 <camera name='realsense_rgb'>
-                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
+                    <pose frame=''>0 0 0 0 0 0</pose>
                     <horizontal_fov>1.02259</horizontal_fov>
                     <distortion>
                         <k1>0</k1>

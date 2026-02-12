@@ -2094,7 +2094,7 @@
     <sensor name="realsense_depth" type="rgbd_camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0444871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
+      <pose>0.0513268 0.0444871 0.0537548 0 0 0 </pose>
       <camera name="realsense_depth">
         <pose frame="">0 0 0 -1.57079 -1.57079 3.14159</pose>
         <horizontal_fov>1.02259</horizontal_fov>
@@ -2126,7 +2126,7 @@
     <sensor name="realsense_rgb" type="camera">
       <always_on>1</always_on>
       <update_rate>30.000000</update_rate>
-      <pose>0.0513268 0.0184871 0.0537548 -1.39626 -1.06329e-17 -1.5708 </pose>
+      <pose>0.0513268 0.0184871 0.0537548 0 0 0 </pose>
       <camera name="realsense_rgb">
         <pose frame="">0 0 0 -1.57079 -1.57079 3.14159</pose>
         <horizontal_fov>1.02259</horizontal_fov>
